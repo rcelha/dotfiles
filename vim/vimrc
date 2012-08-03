@@ -1,0 +1,42 @@
+" Estou sempre em terminais com background escuro
+set background=dark
+
+" Highlight dos codigos
+syntax on
+
+" tab as space
+set expandtab
+
+" tab size "
+set backspace=2
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+
+" some tab features
+set autoindent
+set smarttab
+
+" search
+set incsearch "live
+set ic "ignoring case
+
+" showing some info
+set number "line number
+set title  "title in term
+set laststatus=2 "fname in status bar
+
+" editor stuff
+set showmatch "show {} and [] open/close tags
+
+set pastetoggle=<F2> "copy mode
+
+" multitab
+set tabpagemax=15 "15 tabs per instance
+map <C-m> <Esc>:tabn<CR>
+map <C-n> <Esc>:tabp<CR>
+map <C-l> <Esc>:tabs<CR>
+
+vmap > >gv
+vmap < <gv
+
