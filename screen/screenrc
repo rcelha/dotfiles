@@ -1,0 +1,5 @@
+rdstatus on
+hardstatus alwayslastline
+hardstatus string "%{.bW}%-Lw%{.rW}%n %t%{-}%+Lw %=%{..G} %H %{..Y} %m/%d %C%   a "
+  
+
