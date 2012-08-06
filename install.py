@@ -1,3 +1,4 @@
+#! /usr/bin/python
 import os
 import shutil
 
@@ -16,10 +17,10 @@ for dir in os.listdir('.'):
         if file[0] == '.':
             continue
 
-        file_path = '%s/%s' % (dir, file) # relative path to the local file
+        file_path = '%s/%s' % (dir, file)  # relative path to the local file
         if not os.path.isfile(file_path):
             continue
-        
+
         home_dotfile_path = '%s/.%s' % (USER_DIR, file)
         if os.path.exists(home_dotfile_path):
             # absolute path to the local file
@@ -40,5 +41,3 @@ for dir in os.listdir('.'):
             os.remove(home_dotfile_path)
 
             os.symlink(symlink_target, home_dotfile_path)
-
-
