@@ -1,43 +1,34 @@
 #! /usr/bin/python
 import os
 import shutil
+import glob
 
-USER_DIR = os.path.expanduser('~')
+HOME_DIR = os.path.expanduser('~')
 
-for dir in os.listdir('.'):
-    if not os.path.isdir(dir):
+for file_path in glob.glob('*/*'):
+    if not os.path.isfile(file_path):
         continue
 
-    # ignoring dot folders (.git)
-    if dir[0] == '.':
-        continue
+    file_name = file_path.split('/')[1]
+    home_dotfile_path = '%s/.%s' % (HOME_DIR, file_name)
 
-    for file in os.listdir(dir):
-        # again, ignoring dot files
-        if file[0] == '.':
-            continue
+    # absolute path to the local file
+    symlink_target = os.path.join(os.getcwd(), file_path)
 
-        file_path = '%s/%s' % (dir, file)  # relative path to the local file
-        if not os.path.isfile(file_path):
-            continue
+    if os.path.exists(home_dotfile_path):
+        if os.path.islink(home_dotfile_path):
+            if os.path.realpath(home_dotfile_path) == symlink_target:
+                # already set, nothing to do here
+                continue
 
-        home_dotfile_path = '%s/.%s' % (USER_DIR, file)
-        # absolute path to the local file
-        symlink_target = os.path.join(os.getcwd(), file_path)
+        print 'Saving backup for %s.' % home_dotfile_path
 
-        if os.path.exists(home_dotfile_path):
-            if os.path.islink(home_dotfile_path):
-                if os.path.realpath(home_dotfile_path) == symlink_target:
-                    # already set, nothing to do here
-                    continue
+        home_dotfile_backup_path = '%s/%s_backup' % (HOME_DIR, file_name)
 
-            print 'Saving backup for %s.' % home_dotfile_path
+        # creates the backup
+        shutil.copyfile(home_dotfile_path, home_dotfile_backup_path)
 
-            home_dotfile_backup_path = '%s/%s_backup' % (USER_DIR, file)
+        os.remove(home_dotfile_path)
 
-            # creates the backup
-            shutil.copyfile(home_dotfile_path, home_dotfile_backup_path)
-
-            os.remove(home_dotfile_path)
-
-        os.symlink(symlink_target, home_dotfile_path)
+    print 'Creating symlink for %s.' % file_name
+    os.symlink(symlink_target, home_dotfile_path)
