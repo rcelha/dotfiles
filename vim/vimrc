@@ -1,7 +1,7 @@
-" Estou sempre em terminais com background escuro
+" Dark background
 set background=dark
 
-" Highlight dos codigos
+" Code highlight
 syntax on
 
 " tab as space
@@ -18,7 +18,7 @@ set autoindent
 set smarttab
 
 " search
-set incsearch "live
+set incsearch "live search
 set ic "ignoring case
 
 " showing some info
@@ -39,4 +39,3 @@ map <C-l> <Esc>:tabs<CR>
 
 vmap > >gv
 vmap < <gv
-
