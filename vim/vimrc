@@ -39,3 +39,6 @@ map <C-l> <Esc>:tabs<CR>
 
 vmap > >gv
 vmap < <gv
+
+set wildmode=list:full
+set wildmenu
