@@ -22,10 +22,10 @@ for dir in os.listdir('.'):
             continue
 
         home_dotfile_path = '%s/.%s' % (USER_DIR, file)
-        if os.path.exists(home_dotfile_path):
-            # absolute path to the local file
-            symlink_target = os.path.join(os.getcwd(), file_path)
+        # absolute path to the local file
+        symlink_target = os.path.join(os.getcwd(), file_path)
 
+        if os.path.exists(home_dotfile_path):
             if os.path.islink(home_dotfile_path):
                 if os.path.realpath(home_dotfile_path) == symlink_target:
                     # already set, nothing to do here
@@ -40,4 +40,4 @@ for dir in os.listdir('.'):
 
             os.remove(home_dotfile_path)
 
-            os.symlink(symlink_target, home_dotfile_path)
+        os.symlink(symlink_target, home_dotfile_path)
