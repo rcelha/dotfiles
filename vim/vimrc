@@ -1,7 +1,7 @@
-" Dark background
+" Estou sempre em terminais com background escuro
 set background=dark
 
-" Code highlight
+" Highlight dos codigos
 syntax on
 
 " tab as space
@@ -18,7 +18,7 @@ set autoindent
 set smarttab
 
 " search
-set incsearch "live search
+set incsearch "live
 set ic "ignoring case
 
 " showing some info
@@ -28,7 +28,7 @@ set laststatus=2 "fname in status bar
 
 " editor stuff
 set showmatch "show {} and [] open/close tags
-
+" set textwidth=79 "break on 79o caracter
 set pastetoggle=<F2> "copy mode
 
 " multitab
@@ -36,9 +36,3 @@ set tabpagemax=15 "15 tabs per instance
 map <C-m> <Esc>:tabn<CR>
 map <C-n> <Esc>:tabp<CR>
 map <C-l> <Esc>:tabs<CR>
-
-vmap > >gv
-vmap < <gv
-
-set wildmode=list:full
-set wildmenu

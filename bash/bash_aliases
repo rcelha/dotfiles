@@ -1,0 +1,11 @@
+alias l="ls -lh"
+alias ..="cd .."
+alias ...="cd ../.."
+alias vim="vim -p"
+
+export LC_ALL="pt_BR.utf8"
+export EDITOR=vim
+export PATH=$HOME/local/bin:$PATH
+export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
+
+source ~/.git-bashrc
