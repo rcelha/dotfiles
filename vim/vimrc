@@ -1,3 +1,5 @@
+set encoding=utf8
+
 " Estou sempre em terminais com background escuro
 set background=dark
 
