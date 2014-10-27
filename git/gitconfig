@@ -1,6 +1,6 @@
 [user]
-	name = Marcio
-	email = marcio.cruz@ispm.com.br
+	name = Rodrigo Correa
+	email = rcelha@gmail.com
 [color]
 	ui = true
 [alias]
@@ -14,3 +14,7 @@
 	branchdiff = diff master...
 [core]
 	editor = vim -c :1
+
+[push]
+    default = matching
+
