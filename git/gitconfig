@@ -14,3 +14,6 @@
 	branchdiff = diff master...
 [core]
 	editor = vim -c :1
+
+[push]
+    default = simple
