@@ -39,3 +39,8 @@ set tabpagemax=15 "15 tabs per instance
 map <C-m> <Esc>:tabn<CR>
 map <C-n> <Esc>:tabp<CR>
 map <C-l> <Esc>:tabs<CR>
+
+set wildmode=list:full
+set wildmenu
+
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
