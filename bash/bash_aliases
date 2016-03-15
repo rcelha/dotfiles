@@ -3,6 +3,10 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias vim="vim -p"
 
+# docker commands
+alias aws="docker run -it --rm -v ${HOME}/.aws:/root/.aws:ro anigeo/awscli"
+
+
 export LANG="pt_BR.UTF-8"
 export LANGUAGE="pt_BR.UTF-8"
 export LC_ALL="pt_BR.UTF-8"
