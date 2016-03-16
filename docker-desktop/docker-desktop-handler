@@ -1,0 +1,62 @@
+# docker commands
+alias aws="docker run -it --rm -v ${HOME}/.aws:/root/.aws:ro anigeo/awscli"
+
+fn_exists() {
+    declare -f $1 > /dev/null;
+    return $?
+}
+
+orig_command_not_found_handle() {
+    echo;
+}
+
+fn_exists command_not_found_handle;
+handle_exists=$?
+if [ $handle_exists -eq 0 ]; then
+    eval "$(echo "orig_command_not_found_handle()"; declare -f command_not_found_handle | tail -n +2)"
+    function command_not_found_handle {
+        if ! docker inspect --type image  "$1" >&/dev/null; then
+			echo ">> '$1' was not found amoung your DOCKER images";
+			echo ">> You can download this image with:";
+			echo ">> sudo docker pull $1";
+			echo;
+
+			orig_command_not_found_handle $@;
+			return $?;
+        fi;
+
+        set -ex;
+        local valid_name=`echo $1 | sed -r 's/\:|\./_/g'`
+        local DOCKER_DESKTOP_HOME="${HOME}/.docker-desktop/${valid_name}-home";
+        mkdir -p "${DOCKER_DESKTOP_HOME}";
+
+		# Add a bunch of (optional) devices
+		# (Don't add them unconditionally: if they don't exist, it
+		# would prevent the container from starting)
+		local DEVICES=
+		for DEV in /dev/kvm /dev/ttyUSB* /dev/dri/* /dev/snd/*; do
+			if [ -b "$DEV" -o -c "$DEV" ]; then
+				DEVICES="$DEVICES --device $DEV:$DEV"
+			fi
+		done
+
+		# And a few (optional) files
+		# (Here again, they don't always exist everywhere)
+		local VOLUMES=
+		for VOL in /tmp/.X11-unix /run/user; do
+			if [ -e "$VOL" ]; then
+				VOLUMES="$VOLUMES --volume $VOL:$VOL"
+			fi
+		done
+
+		# Check if we are on a tty to decide whether to allocate one
+		local DASHT=
+		tty -s && DASHT=-t
+
+		docker run --rm $DASHT -i \
+			$VOLUMES $DEVICES \
+			-v /etc/localtime:/etc/localtime:ro \
+			-v "${DOCKER_DESKTOP_HOME}:/home/docker-desktop" \
+			"$@"
+    }
+fi;
