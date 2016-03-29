@@ -1,8 +1,28 @@
 # docker commands
+export DOCKERHOME=${HOME}/.docker-home;
+
 alias aws="docker run -it --rm -v ${HOME}/.aws:/root/.aws:ro anigeo/awscli"
 
+android-studio () {
+    xhost +;
+    docker run -ti --rm \
+        --name=android-studio \
+        -e DISPLAY=unix$DISPLAY  \
+        -e LANG=pt_BR.UTF-8 \
+        --privileged \
+        -v /dev/bus/usb:/dev/bus/usb \
+        -v /tmp/.X11-unix:/tmp/.X11-unix \
+        rcelha/android-studio $@;
+}
+
+# docker utils
 alias docker-compose-dev="docker-compose -f docker-compose.yml -f docker-compose.dev.yml"
+
+buildthis () {
+    docker build -t rcelha/`basename ${PWD} ` .
+}
 
 purge-images() {
     docker rmi `docker images -f dangling=true -q`;
 }
+alias prune-images="purge-images"
