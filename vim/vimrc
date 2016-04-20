@@ -44,3 +44,4 @@ set wildmode=list:full
 set wildmenu
 
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+autocmd FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
