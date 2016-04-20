@@ -6,8 +6,8 @@ import glob
 HOME_DIR = os.path.expanduser('~')
 
 for file_path in glob.glob('*/*'):
-    if not os.path.isfile(file_path):
-        continue
+    #if not os.path.isfile(file_path):
+    #    continue
 
     file_name = file_path.split('/')[1]
     home_dotfile_path = '%s/.%s' % (HOME_DIR, file_name)

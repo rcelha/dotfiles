@@ -1,8 +1,8 @@
 set encoding=utf8
 
-" Estou sempre em terminais com background escuro
-set background=dark
-set  t_Co=256
+" replacament for set background=dark
+highlight Normal ctermfg=grey ctermbg=black
+set t_Co=256
 
 " Highlight dos codigos
 syntax on
@@ -43,5 +43,4 @@ map <C-l> <Esc>:tabs<CR>
 set wildmode=list:full
 set wildmenu
 
-autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
-autocmd FileType javascript set shiftwidth=2 softtabstop=2 tabstop=2
+filetype plugin indent on
