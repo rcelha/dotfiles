@@ -44,3 +44,8 @@ set wildmode=list:full
 set wildmenu
 
 filetype plugin indent on
+
+" Plug
+call plug#begin('~/.vim-plug')
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+call plug#end()
