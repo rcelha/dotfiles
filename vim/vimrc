@@ -23,6 +23,7 @@ set smarttab
 " search
 set incsearch "live
 set ic "ignoring case
+set hlsearch
 
 " showing some info
 set number "line number
@@ -48,6 +49,6 @@ call plug#begin('~/.vim-plug')
 
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'ctrlpvim/ctrlp.vim'
-
+Plug 'vim-airline/vim-airline'
 filetype plugin indent on
 call plug#end()
