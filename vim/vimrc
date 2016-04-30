@@ -51,7 +51,7 @@ Plug 'rking/ag.vim'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
-
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules$',
