@@ -14,7 +14,7 @@ torbrowser(){
         -e GDK_DPI_SCALE \
         --device /dev/snd \
         --name torbrowser \
-        jess/tor-browser
+        rcelha/tor-browser
 }
 
 # docker utils
