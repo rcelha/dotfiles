@@ -2,8 +2,7 @@ set encoding=utf8
 
 " Code Highlight
 set t_Co=256
-set background=dark
-set regexpengine=1
+" set background=dark
 syntax enable
 
 " tab as space
@@ -49,8 +48,11 @@ call plug#begin('~/.vim-plug')
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
+
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+
+Plug 'flazz/vim-colorschemes'
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules$',
@@ -60,3 +62,5 @@ let g:ctrlp_custom_ignore = {
 
 filetype plugin indent on
 call plug#end()
+
+colo CandyPaper
