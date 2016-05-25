@@ -1,11 +1,10 @@
 set encoding=utf8
 
-" replacament for set background=dark
-highlight Normal ctermfg=grey ctermbg=black
+" Code Highlight
 set t_Co=256
-
-" Highlight dos codigos
-syntax on
+set background=dark
+set regexpengine=1
+syntax enable
 
 " tab as space
 set expandtab
@@ -48,9 +47,9 @@ set wildmenu
 call plug#begin('~/.vim-plug')
 
 Plug 'rking/ag.vim'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 
 let g:ctrlp_custom_ignore = {
