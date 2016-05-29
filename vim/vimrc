@@ -31,7 +31,7 @@ set laststatus=2 "fname in status bar
 " editor stuff
 set showmatch "show {} and [] open/close tags
 " set textwidth=79 "break on 79o caracter
-set pastetoggle=<F2> "copy mode
+set pastetoggle=<C-v> "copy mode
 
 " multitab
 set tabpagemax=15 "15 tabs per instance
@@ -41,6 +41,18 @@ map <C-l> <Esc>:tabs<CR>
 
 set wildmode=list:full
 set wildmenu
+
+" Switching themes
+let g:mydark_colors = 'CandyPaper'
+let g:mylight_colors = 'summerfruit256'
+function! s:SwitchTheme()
+    if g:colors_name == g:mydark_colors
+        execute 'colo ' . g:mylight_colors
+    else
+        execute 'colo ' . g:mydark_colors
+    endif
+endfunction
+map <silent> <C-c> :call <SID>SwitchTheme()<CR>
 
 " Plug
 call plug#begin('~/.vim-plug')
@@ -55,7 +67,7 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'flazz/vim-colorschemes'
 
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|__pycache__$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }

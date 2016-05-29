@@ -13,6 +13,7 @@ torbrowser(){
         -e GDK_SCALE \
         -e GDK_DPI_SCALE \
         --device /dev/snd \
+        --group-add audio \
         --name torbrowser \
         rcelha/tor-browser
 }
