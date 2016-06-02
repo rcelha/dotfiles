@@ -31,7 +31,7 @@ set laststatus=2 "fname in status bar
 " editor stuff
 set showmatch "show {} and [] open/close tags
 " set textwidth=79 "break on 79o caracter
-set pastetoggle=<C-v> "copy mode
+" set pastetoggle=<C-v> "copy mode
 
 " multitab
 set tabpagemax=15 "15 tabs per instance
