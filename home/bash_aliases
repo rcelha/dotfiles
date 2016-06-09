@@ -3,3 +3,7 @@
 for i in ${HOME}/.sources/*; do
     source $i;
 done;
+
+for i in ${HOME}/.aliases/*; do
+    source $i;
+done;
