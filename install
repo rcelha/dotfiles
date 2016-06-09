@@ -3,11 +3,9 @@
 BASE=${PWD}
 
 link() {
-    set -x
     rm -f "${2}.old"
     mv "$2" "${2}.old"
     ln -s "${1}" "${2}"
-    set +x
 }
 
 create_home_link () {
