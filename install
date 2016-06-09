@@ -1,0 +1,23 @@
+#!/bin/sh
+
+BASE=${PWD}
+
+create_home_link () {
+    target=`realpath ${1}`
+    linkname=${HOME}/.`basename ${target}`
+    echo installing $target
+    ln -s ${target} ${linkname}
+}
+
+install_home () {
+    for i in ${BASE}/home/*; do
+        create_home_link $i
+    done;
+}
+
+install_sources () {
+    create_home_link "${BASE}/sources"
+}
+
+install_sources;
+install_home;
