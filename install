@@ -1,13 +1,20 @@
 #!/bin/sh
 
 BASE=${PWD}
-LN='ln -s --backup -S .old'
+
+link() {
+    set -x
+    rm -f "${2}.old"
+    mv "$2" "${2}.old"
+    ln -s "${1}" "${2}"
+    set +x
+}
 
 create_home_link () {
     target=`realpath ${1}`
     linkname=${HOME}/.`basename ${target}`
     echo installing $target
-    ${LN} ${target} ${linkname}
+    link ${target} ${linkname}
 }
 
 install_home () {
@@ -20,20 +27,22 @@ install_sources () {
     create_home_link "${BASE}/sources"
 }
 
-install_non_links () {
-    for i in vim byobu; do
-        target=`realpath ${i}`
-        dirname=${HOME}/.${i}
-        mkdir -p ${dirname}
 
-        for ii in ${i}/*; do
-            origin=`realpath ${ii}`
-            linkname=${dirname}/.`basename ${ii}`
-            ${LN} ${origin} ${linkname} 
-        done;
+create_flink () {
+    mkdir -p `dirname ${2}`
+    link ${1} ${2} 
+}
+
+install_non_links () {
+    for i in byobu/*; do
+        create_flink ${BASE}/$i ${HOME}/.byobu/.`basename $i`
+    done;
+
+    for i in vim/*; do
+        create_flink ${BASE}/$i ${HOME}/.vim/`basename $i`
     done;
 }
 
-install_sources
 install_home
+install_sources
 install_non_links
