@@ -1,12 +1,13 @@
 #!/bin/sh
 
 BASE=${PWD}
+LN='ln -s --backup -S .old'
 
 create_home_link () {
     target=`realpath ${1}`
     linkname=${HOME}/.`basename ${target}`
     echo installing $target
-    ln -s ${target} ${linkname}
+    ${LN} ${target} ${linkname}
 }
 
 install_home () {
@@ -19,5 +20,20 @@ install_sources () {
     create_home_link "${BASE}/sources"
 }
 
-install_sources;
-install_home;
+install_non_links () {
+    for i in vim byobu; do
+        target=`realpath ${i}`
+        dirname=${HOME}/.${i}
+        mkdir -p ${dirname}
+
+        for ii in ${i}/*; do
+            origin=`realpath ${ii}`
+            linkname=${dirname}/.`basename ${ii}`
+            ${LN} ${origin} ${linkname} 
+        done;
+    done;
+}
+
+install_sources
+install_home
+install_non_links
