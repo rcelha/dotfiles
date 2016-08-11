@@ -3,8 +3,8 @@ set encoding=utf8
 " Code Highlight
 set t_Co=256
 " set background=dark
-syntax enable
 
+syntax enable
 " tab as space
 set expandtab
 
@@ -38,6 +38,12 @@ set tabpagemax=15 "15 tabs per instance
 map <C-m> <Esc>:tabn<CR>
 map <C-n> <Esc>:tabp<CR>
 map <C-l> <Esc>:tabs<CR>
+
+" move line
+nnoremap <C-j> :m+<CR>==
+nnoremap <C-k> :m-2<CR>==
+vnoremap <C-j> :m'>+<CR>gv=gv
+vnoremap <C-k> :m-2<CR>gv=gv
 
 set wildmode=list:full
 set wildmenu
