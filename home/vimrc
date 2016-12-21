@@ -63,17 +63,22 @@ map <silent> <C-c> :call <SID>SwitchTheme()<CR>
 " Plug
 call plug#begin('~/.vim-plug')
 
+" Utils plugins
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 
+" Syntax
 Plug 'jeroenbourgois/vim-actionscript', { 'for': 'actionscript' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 let g:vim_markdown_folding_disabled = 1
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'fatih/vim-go'
 
+" Colors
 Plug 'flazz/vim-colorschemes'
 
+" Plugin configurations
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|__pycache__$',
   \ 'file': '\v\.(exe|so|dll)$',
