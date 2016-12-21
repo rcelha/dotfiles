@@ -8,6 +8,3 @@ for i in ${HOME}/.aliases/*; do
 done;
 
 if [ -d ~/.nvm ]; then source ~/.nvm/nvm.sh; fi;
-
-export GOROOT=/usr/local/go
-export PATH=$GOROOT/bin:$PATH
