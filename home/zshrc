@@ -1,10 +1,8 @@
 export ZSH=/home/rcelha/.oh-my-zsh
 ZSH_THEME="robbyrussell"
-plugins=(git npm docker docker-compose colorize)
+plugins=(git npm docker docker-compose colorize colored-man-pages yarn nvm)
 source $ZSH/oh-my-zsh.sh
 
 for i in ${HOME}/.aliases/*; do
     source $i;
 done;
-
-if [ -d ~/.nvm ]; then source ~/.nvm/nvm.sh; fi;
