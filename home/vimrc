@@ -71,6 +71,8 @@ Plug 'vim-airline/vim-airline'
 " Syntax
 Plug 'pangloss/vim-javascript'
 let g:javascript_plugin_jsdoc = 1
+Plug 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
 Plug 'jeroenbourgois/vim-actionscript', { 'for': 'actionscript' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 let g:vim_markdown_folding_disabled = 1
