@@ -81,6 +81,7 @@ Plug 'pangloss/vim-javascript'
 let g:javascript_plugin_jsdoc = 1
 Plug 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
+Plug 'leafgarland/typescript-vim'
 Plug 'jeroenbourgois/vim-actionscript', { 'for': 'actionscript' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 let g:vim_markdown_folding_disabled = 1
@@ -92,7 +93,7 @@ Plug 'flazz/vim-colorschemes'
 
 " Plugin configurations
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|__pycache__$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|__pycache__|env$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
