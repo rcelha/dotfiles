@@ -43,6 +43,7 @@ apt-get install -y	google-chrome-stable \
                     xdotool \
                     keepassx \
                     xsel xclip \
+                    htop \
                     numix-icon-theme numix-icon-theme-circle \
                     qemu-kvm libvirt-bin ubuntu-vm-builder bridge-utils;
 
