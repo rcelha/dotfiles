@@ -22,8 +22,8 @@ set smarttab
 set incsearch "live
 set ic "ignoring case
 set hlsearch
-
 " showing some info
+
 set number "line number
 set title  "title in term
 set laststatus=2 "fname in status bar
@@ -38,8 +38,8 @@ nmap y <Plug>SystemCopy
 xmap y <Plug>SystemCopy
 nmap p <Plug>SystemPaste
 nmap yy <Plug>SystemCopyLine
-
 " multitab
+
 set tabpagemax=15 "15 tabs per instance
 map <C-m> <Esc>:tabn<CR>
 map <C-n> <Esc>:tabp<CR>
@@ -70,6 +70,7 @@ map <silent> <C-c> :call <SID>SwitchTheme()<CR>
 call plug#begin('~/.vim-plug')
 
 " Utils plugins
+Plug 'stephpy/vim-yaml'
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
@@ -87,6 +88,7 @@ Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 let g:vim_markdown_folding_disabled = 1
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'fatih/vim-go'
+Plug 'saltstack/salt-vim'
 
 " Colors
 Plug 'flazz/vim-colorschemes'
@@ -94,7 +96,7 @@ Plug 'flazz/vim-colorschemes'
 " Plugin configurations
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|__pycache__|env$',
-  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'file': '\v\.(exe|so|dll|pyc|class)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
