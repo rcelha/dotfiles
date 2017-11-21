@@ -3,17 +3,9 @@ ZSH_THEME="robbyrussell"
 plugins=(git npm docker docker-compose colorize colored-man-pages yarn nvm)
 source $ZSH/oh-my-zsh.sh
 
-for i in ${HOME}/.aliases/*; do
-    source $i;
-done;
+source ${HOME}/.bash_aliases
 
-if [ -d ${HOME}/Android ]; then
-    export ANDROID_HOME=$HOME/Android/Sdk
-    export PATH=$PATH:$ANDROID_HOME/tools
-    export PATH=$PATH:$ANDROID_HOME/platform-tools
-fi;
-
-if [ -f "$HOME/.nvm/nvm.sh" ]; then
+if [ -f "$NVM_DIR/nvm.sh" ]; then
 	autoload -U add-zsh-hook
 	load-nvmrc() {
 	  local node_version="$(nvm version)"
@@ -35,3 +27,5 @@ if [ -f "$HOME/.nvm/nvm.sh" ]; then
 	add-zsh-hook chpwd load-nvmrc
 	load-nvmrc
 fi;
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

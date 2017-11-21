@@ -23,7 +23,6 @@ install_home () {
 
 install_sources () {
     create_home_link "${BASE}/sources"
-    create_home_link "${BASE}/aliases"
 }
 
 

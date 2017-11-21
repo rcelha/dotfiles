@@ -1,5 +1,4 @@
 # docker commands
-export DOCKERHOME=${HOME}/.docker-home;
 
 alias aws_="docker run -it --rm -v ${HOME}/.aws:/root/.aws anigeo/awscli"
 
@@ -46,8 +45,3 @@ xrunthis () {
     imageName=rcelha/`basename ${PWD}`
     xrun ${imageName} $@;
 }
-
-purge-images() {
-    docker rmi `docker images -f dangling=true -q`;
-}
-alias prune-images="purge-images"
