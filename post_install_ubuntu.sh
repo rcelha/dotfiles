@@ -1,20 +1,23 @@
 set -ex;
 
 # REPOS
-#   > chrome
+## Chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - 
 echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list
 
-add-apt-repository -y ppa:webupd8team/sublime-text-3;
+## Java
 add-apt-repository -y ppa:webupd8team/java
-# add-apt-repository -y ppa:bumblebee/stable;
 echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 
-#   > spotify
+## Sublime
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+
+## Spotify
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
 echo deb http://repository.spotify.com testing non-free | tee /etc/apt/sources.list.d/spotify.list
 
-# Numix icons
+## Numix icons
 add-apt-repository ppa:numix/ppa
 
 # General
@@ -30,8 +33,9 @@ apt-get install -y	google-chrome-stable \
                     linux-headers-generic \
                     curl \
                     oracle-java8-set-default \
-                    sublime-text-installer \
-                    vlc browser-plugin-vlc \
+                    sublime-text \
+                    vlc \
+                    browser-plugin-vlc \
                     spotify-client \
                     silversearcher-ag \
                     paprefs \
