@@ -1,8 +1,10 @@
 #!/bin/sh
-# homebrew
 
-# /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-# brew tap caskroom/cask
+# homebrew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# homebrew cask
+brew tap caskroom/cask
 
 brew cask install firefox \
                   google-chrome \
