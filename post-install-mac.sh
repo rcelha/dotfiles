@@ -18,12 +18,18 @@ brew cask install firefox \
                   keepassx \
                   java \
                   caffeine \
+                  karabiner-elements /
                   whatsapp;
 
 brew install byobu \
              vim \
              sbt \
              the_silver_searcher \
+             awscli \
+             yarn \
              myrepos;
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
