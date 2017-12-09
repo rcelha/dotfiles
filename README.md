@@ -3,7 +3,7 @@ dotfiles
 
 Dotfiles and utility scripts.
 
-To install, just run the install.py script:
+To install, just run the install script:
 
 ```bash
 ./install

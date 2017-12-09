@@ -1,46 +1,13 @@
 #!/bin/sh
 
-BASE=${PWD}
+if [ ! `which stow` ]; then
+    echo Install GNU stow
+    echo exit; exit 1
+fi;
 
-link() {
-    rm -f "${2}.old"
-    mv "$2" "${2}.old"
-    ln -s "${1}" "${2}"
-}
-
-create_home_link () {
-    target=`realpath ${1}`
-    linkname=${HOME}/.`basename ${target}`
-    echo installing $target
-    link ${target} ${linkname}
-}
-
-install_home () {
-    for i in ${BASE}/home/*; do
-        create_home_link $i
-    done;
-}
-
-install_sources () {
-    create_home_link "${BASE}/sources"
-}
-
-
-create_flink () {
-    mkdir -p `dirname ${2}`
-    link ${1} ${2} 
-}
-
-install_non_links () {
-    for i in byobu/*; do
-        create_flink ${BASE}/$i ${HOME}/.byobu/.`basename $i`
-    done;
-
-    for i in vim/*; do
-        create_flink ${BASE}/$i ${HOME}/.vim/`basename $i`
-    done;
-}
-
-install_home
-install_sources
-install_non_links
+stow -t ~ general
+stow -t ~ sources
+stow -t ~ tmux
+stow -t ~/ -d vim vimrc
+stow -t ~/.vim -d vim vim
+stow -t ~ zsh
