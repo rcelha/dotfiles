@@ -14,6 +14,7 @@ brew cask install firefox \
                   sublime-text \
                   dropbox \
                   slack \
+                  postman \
                   spotify \
                   enpass \
                   iterm2 \
