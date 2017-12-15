@@ -21,6 +21,8 @@ brew cask install firefox \
                   java \
                   caffeine \
                   karabiner-elements \
+                  steam \
+                  aerial \
                   whatsapp;
 
 brew install byobu \
