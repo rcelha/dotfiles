@@ -1,6 +1,11 @@
-alias ls="ls --color -h --group-directories-first"
-alias l="ls -lh"
-alias ll="ls -lha"
+if grep -q darwin <<<$OSTYPE; then
+    alias ls="gls --color=auto"
+else
+    alias ls="ls --color=auto"
+fi
+
+alias ll='ls -Flha --group-directories-first'
+alias l="ll"
 alias ..="cd .."
 alias ...="cd ../.."
 alias vim="vim -p"
