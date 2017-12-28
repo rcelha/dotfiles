@@ -6,6 +6,7 @@ if [ ! `which stow` ]; then
 fi;
 
 mkdir -p ~/.vim
+mkdir -p ~/.ssh/config.d
 
 stow -t ~ general
 stow -t ~ sources
@@ -13,3 +14,4 @@ stow -t ~ tmux
 stow -t ~/ -d vim vimrc
 stow -t ~/.vim -d vim vim
 stow -t ~ zsh
+stow -t ~/.ssh ssh
