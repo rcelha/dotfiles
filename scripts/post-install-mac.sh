@@ -24,6 +24,9 @@ brew cask install firefox \
                   karabiner-elements \
                   steam \
                   aerial \
+                  virtualbox \
+                  virtualbox-extension-pack \
+                  vagrant \
                   whatsapp;
 
 brew install byobu \
@@ -34,6 +37,7 @@ brew install byobu \
              yarn \
              htop \
              stow \
+             zsh \
              myrepos;
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
