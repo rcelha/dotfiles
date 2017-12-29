@@ -4,8 +4,8 @@ else
     alias ls="ls --color=auto"
 fi
 
-alias ll='ls -Flha --group-directories-first'
-alias l="ll"
+alias l='ls -Flh --group-directories-first'
+alias ll="l -a"
 alias ..="cd .."
 alias ...="cd ../.."
 alias vim="vim -p"
