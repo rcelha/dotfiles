@@ -27,6 +27,7 @@ brew cask install firefox \
                   virtualbox \
                   virtualbox-extension-pack \
                   vagrant \
+                  dash \
                   whatsapp;
 
 brew install byobu \
