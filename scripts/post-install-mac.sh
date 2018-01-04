@@ -28,6 +28,7 @@ brew cask install firefox \
                   virtualbox-extension-pack \
                   vagrant \
                   dash \
+                  intellij-idea-ce \
                   whatsapp;
 
 brew install byobu \
@@ -39,6 +40,7 @@ brew install byobu \
              htop \
              stow \
              zsh \
+             tldr \
              myrepos;
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
