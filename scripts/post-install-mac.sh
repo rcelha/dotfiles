@@ -31,7 +31,7 @@ brew cask install firefox \
                   intellij-idea-ce \
                   whatsapp;
 
-brew install byobu \
+brew install tmux \
              vim \
              sbt \
              the_silver_searcher \
@@ -41,6 +41,7 @@ brew install byobu \
              stow \
              zsh \
              tldr \
+             jq \
              myrepos;
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

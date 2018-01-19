@@ -89,6 +89,7 @@ let g:vim_markdown_folding_disabled = 1
 Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'fatih/vim-go'
 Plug 'saltstack/salt-vim'
+Plug 'tpope/vim-fugitive'
 
 " Colors
 Plug 'flazz/vim-colorschemes'
