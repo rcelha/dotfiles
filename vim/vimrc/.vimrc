@@ -90,6 +90,7 @@ Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
 Plug 'fatih/vim-go'
 Plug 'saltstack/salt-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'rust-lang/rust.vim'
 
 " Colors
 Plug 'flazz/vim-colorschemes'
