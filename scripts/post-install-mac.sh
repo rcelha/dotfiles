@@ -1,48 +1,13 @@
 #!/bin/sh
 
+set -ex
+
 # homebrew
 if [ ! `which brew` ]; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi;
 
-# homebrew cask
-brew tap caskroom/cask
-
-brew cask install firefox \
-                  google-chrome \
-                  docker \
-                  sublime-text \
-                  dropbox \
-                  slack \
-                  postman \
-                  spotify \
-                  enpass \
-                  iterm2 \
-                  keepassx \
-                  java \
-                  caffeine \
-                  karabiner-elements \
-                  steam \
-                  aerial \
-                  virtualbox \
-                  virtualbox-extension-pack \
-                  vagrant \
-                  dash \
-                  intellij-idea-ce \
-                  whatsapp;
-
-brew install tmux \
-             vim \
-             sbt \
-             the_silver_searcher \
-             awscli \
-             yarn \
-             htop \
-             stow \
-             zsh \
-             tldr \
-             jq \
-             myrepos;
+brew bundle
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
