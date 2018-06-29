@@ -16,12 +16,3 @@ alias httpserver="python -m SimpleHTTPServer"
 json_format () {
     echo ${@} | python -m json.tool
 }
-
-
-export NVM_DIR=$HOME/.nvm
-load_nvm () {
-    if [ -s "$NVM_DIR/nvm.sh" ]; then
-        . "$NVM_DIR/nvm.sh" && . "$NVM_DIR/bash_completion"
-    fi;
-}
-alias nvm='unalias nvm && load_nvm'

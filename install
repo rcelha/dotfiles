@@ -5,9 +5,14 @@ if [ ! `which stow` ]; then
     echo exit; exit 1
 fi;
 
+# Prepare
 mkdir -p ~/.vim
 mkdir -p ~/.ssh/config.d
 
+# Install Extra zsh plugins
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+
+# Install
 stow -t ~ general
 stow -t ~ sources
 stow -t ~ tmux

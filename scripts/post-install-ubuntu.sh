@@ -70,7 +70,6 @@ usermod -aG libvirtd rcelha
 
 # as rcelha
 su -c "cd ~ && curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh -" rcelha
-su -c "cd ~ && curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.1/install.sh | bash" rcelha
 
 # manual: numix nylas slack geary
 # ubuntu optionals
