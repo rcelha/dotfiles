@@ -10,7 +10,9 @@ mkdir -p ~/.vim
 mkdir -p ~/.ssh/config.d
 
 # Install Extra zsh plugins
-git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+if [ ! -d ~/.oh-my-zsh/custom/plugins/zsh-nvm ]; then
+    git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
+fi;
 
 # Install
 stow -t ~ general
