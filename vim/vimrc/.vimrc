@@ -34,10 +34,10 @@ set showmatch "show {} and [] open/close tags
 " set pastetoggle=<C-v> "copy mode
 
 " Copy and Paste from transfer area
-nmap y <Plug>SystemCopy
-xmap y <Plug>SystemCopy
-nmap p <Plug>SystemPaste
-nmap yy <Plug>SystemCopyLine
+" nmap y <Plug>SystemCopy
+" xmap y <Plug>SystemCopy
+" nmap p <Plug>SystemPaste
+" nmap yy <Plug>SystemCopyLine
 " multitab
 
 set tabpagemax=15 "15 tabs per instance
@@ -91,6 +91,7 @@ Plug 'fatih/vim-go'
 Plug 'saltstack/salt-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
+Plug 'rodjek/vim-puppet'
 
 " Colors
 Plug 'flazz/vim-colorschemes'
