@@ -1,8 +1,10 @@
 [user]
 	name = Rodrigo Corrêa
 	email = rcelha@gmail.com
+
 [color]
 	ui = true
+
 [alias]
 	lgod = log --graph --decorate --oneline
 	lgoda = log --graph --decorate --oneline --all
@@ -12,10 +14,12 @@
 	changelog = log master.. --pretty=format:'%C(yellow)%h%Creset %s%C(bold blue)%an%Creset %n%b' --abbrev-commit --date=relative
 	changedfiles = diff master... --name-status
 	branchdiff = diff master...
+
 [core]
 	editor = vim -c :1
 
 [push]
     default = simple
-[url "git@github.com:"]
-	insteadOf = https://github.com/
+
+[includeIf "gitdir:~/repos/dw/"]
+    path = ~/repos/dw/.gitconfig
