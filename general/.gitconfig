@@ -6,9 +6,6 @@
 	ui = true
 
 [alias]
-	lgod = log --graph --decorate --oneline
-	lgoda = log --graph --decorate --oneline --all
-	unmerged = log --all ^master --pretty=format:'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen%cr %C(bold blue)%an%Creset'--abbrev-commit --date=relative
 	graphb = log --graph --decorate --oneline
 	graph = log --graph --decorate --oneline --all
 	changelog = log master.. --pretty=format:'%C(yellow)%h%Creset %s%C(bold blue)%an%Creset %n%b' --abbrev-commit --date=relative
