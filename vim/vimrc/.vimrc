@@ -31,16 +31,14 @@ set laststatus=2 "fname in status bar
 " editor stuff
 set showmatch "show {} and [] open/close tags
 " set textwidth=79 "break on 79o caracter
-" set pastetoggle=<C-v> "copy mode
 
 " Copy and Paste from transfer area
-" nmap y <Plug>SystemCopy
-" xmap y <Plug>SystemCopy
-" nmap p <Plug>SystemPaste
-" nmap yy <Plug>SystemCopyLine
-" multitab
+set pastetoggle=<F2> "copy mode
+set clipboard=unnamed
 
-set tabpagemax=15 "15 tabs per instance
+
+" multitab
+" set tabpagemax=15 "15 tabs per instance
 map <C-m> <Esc>:tabn<CR>
 map <C-n> <Esc>:tabp<CR>
 map <C-l> <Esc>:tabs<CR>
@@ -75,7 +73,7 @@ Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 " Clipboard utility
-Plug 'christoomey/vim-system-copy'
+" Plug  'christoomey/vim-system-copy'
 
 " Syntax
 Plug 'pangloss/vim-javascript'
