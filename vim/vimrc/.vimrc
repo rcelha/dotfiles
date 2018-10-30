@@ -72,6 +72,8 @@ Plug 'stephpy/vim-yaml'
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
+Plug 'nvie/vim-flake8'
+autocmd BufWritePost *.py call Flake8()
 " Clipboard utility
 " Plug  'christoomey/vim-system-copy'
 
