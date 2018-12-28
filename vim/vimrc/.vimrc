@@ -66,7 +66,6 @@ map <silent> <C-c> :call <SID>SwitchTheme()<CR>
 
 " Plug
 call plug#begin('~/.vim-plug')
-
 " Utils plugins
 Plug 'stephpy/vim-yaml'
 Plug 'rking/ag.vim'
@@ -107,3 +106,6 @@ filetype plugin indent on
 call plug#end()
 
 colo CandyPaper
+
+hi clear SpellBad
+hi SpellBad cterm=undercurl
