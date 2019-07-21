@@ -91,6 +91,7 @@ Plug 'saltstack/salt-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
 Plug 'rodjek/vim-puppet'
+Plug 'airblade/vim-gitgutter'
 
 " Colors
 Plug 'flazz/vim-colorschemes'
