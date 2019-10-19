@@ -53,16 +53,25 @@ set wildmode=list:full
 set wildmenu
 
 " Switching themes
-let g:mydark_colors = 'CandyPaper'
-let g:mylight_colors = 'summerfruit256'
-function! s:SwitchTheme()
-    if g:colors_name == g:mydark_colors
-        execute 'colo ' . g:mylight_colors
-    else
-        execute 'colo ' . g:mydark_colors
+let g:cycle_colors=['candy', 'summerfruit256', 'Monokai']
+function! s:CycleTheme()
+    " if current color is last
+    let l:current_color = g:colors_name
+    let l:next_color = 0
+
+    if current_color !=? g:cycle_colors[-1]
+        for thecolor in g:cycle_colors
+            let l:next_color += 1
+            if l:current_color == thecolor
+                break
+            endif
+        endfor
     endif
+
+    echom '-> ' . g:cycle_colors[l:next_color]
+    execute 'colors ' . g:cycle_colors[l:next_color]
 endfunction
-map <silent> <C-c> :call <SID>SwitchTheme()<CR>
+map <silent> <C-c> :call <SID>CycleTheme()<CR>
 
 " Plug
 call plug#begin('~/.vim-plug')
@@ -70,11 +79,17 @@ call plug#begin('~/.vim-plug')
 Plug 'stephpy/vim-yaml'
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|venv)|node_modules|__pycache__|env$',
+  \ 'file': '\v\.(exe|so|dll|pyc|class|png|jpg)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
 Plug 'vim-airline/vim-airline'
 Plug 'nvie/vim-flake8'
 autocmd BufWritePost *.py call Flake8()
-" Clipboard utility
-" Plug  'christoomey/vim-system-copy'
+command! Flake8Py2 :let g:flake8_cmd="python2 -m flake8"
+command! Flake8Py3 :let g:flake8_cmd="docker run -it --rm -v $(pwd):/apps alpine/flake8:3.7.8"
+Flake8Py2
 
 " Syntax
 Plug 'pangloss/vim-javascript'
@@ -96,17 +111,9 @@ Plug 'airblade/vim-gitgutter'
 " Colors
 Plug 'flazz/vim-colorschemes'
 
-" Plugin configurations
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|__pycache__|env$',
-  \ 'file': '\v\.(exe|so|dll|pyc|class)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-
 filetype plugin indent on
 call plug#end()
 
-colo CandyPaper
-
+colors candy
 hi clear SpellBad
 hi SpellBad cterm=undercurl
