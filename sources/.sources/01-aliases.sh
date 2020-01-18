@@ -4,6 +4,7 @@ else
     alias ls="ls --color=auto"
 fi
 
+alias k=kubectl
 alias l='ls -Flh --group-directories-first'
 alias ll="l -a"
 alias ..="cd .."
