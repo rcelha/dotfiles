@@ -53,7 +53,8 @@ set wildmode=list:full
 set wildmenu
 
 " Switching themes
-let g:cycle_colors=['candy', 'summerfruit256', 'Monokai']
+" let g:cycle_colors=['candy', 'summerfruit256', 'Monokai']
+let g:cycle_colors=['spacecamp', 'summerfruit256']
 function! s:CycleTheme()
     " if current color is last
     let l:current_color = g:colors_name
@@ -107,13 +108,16 @@ Plug 'tpope/vim-fugitive'
 Plug 'rust-lang/rust.vim'
 Plug 'rodjek/vim-puppet'
 Plug 'airblade/vim-gitgutter'
+Plug 'mustache/vim-mustache-handlebars'
 
 " Colors
 Plug 'flazz/vim-colorschemes'
+Plug 'jaredgorski/spacecamp'
 
 filetype plugin indent on
 call plug#end()
 
-colors candy
+execute 'colors ' . g:cycle_colors[0]
+
 hi clear SpellBad
 hi SpellBad cterm=undercurl

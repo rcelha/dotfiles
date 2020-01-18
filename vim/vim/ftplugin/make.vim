@@ -1,3 +1,4 @@
-setlocal noexpandtab
-setlocal shiftwidth=8
-setlocal softtabstop=0
+filetype plugin indent on
+set tabstop=4
+set shiftwidth=4
+set expandtab
