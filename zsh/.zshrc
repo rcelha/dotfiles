@@ -7,7 +7,7 @@ source $ZSH/oh-my-zsh.sh
 source ${HOME}/.profile
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-if [ /Users/rodrigocorrea/.local/bin/kubectl ]; then source <(kubectl completion zsh); fi
+if [ ${HOME}/.local/bin/kubectl ]; then source <(kubectl completion zsh); fi
 
 zstyle ':completion:*:make:*:targets' call-command true # outputs all possible results for make targets
 zstyle ':completion:*:make:*' tag-order targets
