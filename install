@@ -17,4 +17,6 @@ stow -t ~/ -d vim vimrc
 stow -t ~/.vim -d vim vim
 stow -t ~ zsh
 stow -t ~/.ssh ssh
-stow -t ~/.local local
+
+# Install vim plugins
+vim -c "PlugInstall|qa" 
