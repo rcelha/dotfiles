@@ -1,0 +1,3 @@
+{
+  "python.venvFolders": [".venv", "envs",".pyenv",".direnv"]
+}

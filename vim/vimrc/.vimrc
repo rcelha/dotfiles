@@ -53,9 +53,9 @@ set wildmode=list:full
 set wildmenu
 
 " Switching themes
-" let g:cycle_colors=['candy', 'summerfruit256', 'Monokai']
-let g:cycle_colors=['spacecamp', 'summerfruit256']
-function! s:CycleTheme()
+let g:cycle_colors=['candy', 'summerfruit256', 'Monokai', 'PaperColor']
+" let g:cycle_colors=['spacecamp', 'summerfruit256']
+function CycleTheme()
     " if current color is last
     let l:current_color = g:colors_name
     let l:next_color = 0
@@ -72,7 +72,7 @@ function! s:CycleTheme()
     echom '-> ' . g:cycle_colors[l:next_color]
     execute 'colors ' . g:cycle_colors[l:next_color]
 endfunction
-map <silent> <C-c> :call <SID>CycleTheme()<CR>
+map <silent> <C-c> :call CycleTheme()<CR>
 
 " Plug
 call plug#begin('~/.vim-plug')
@@ -86,11 +86,6 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 Plug 'vim-airline/vim-airline'
-Plug 'nvie/vim-flake8'
-autocmd BufWritePost *.py call Flake8()
-command! Flake8Py2 :let g:flake8_cmd="python2 -m flake8"
-command! Flake8Py3 :let g:flake8_cmd="docker run -it --rm -v $(pwd):/apps alpine/flake8:3.7.8"
-Flake8Py2
 
 " Syntax
 Plug 'pangloss/vim-javascript'
@@ -109,6 +104,26 @@ Plug 'rust-lang/rust.vim'
 Plug 'rodjek/vim-puppet'
 Plug 'airblade/vim-gitgutter'
 Plug 'mustache/vim-mustache-handlebars'
+
+" COC
+" Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+
+" Format selection
+vmap <C-f>  <Plug>(coc-format-selected)
+nmap <C-f>  <Plug>(coc-format-selected)
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Double tap space to list COC commands
+nnoremap <silent> <Space><Space> :CocCommand<CR>
 
 " Colors
 Plug 'flazz/vim-colorschemes'
