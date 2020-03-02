@@ -52,16 +52,28 @@ vnoremap <C-k> :m-2<CR>gv=gv
 set wildmode=list:full
 set wildmenu
 
+" Turn on filetype
+filetype plugin indent on
+
+" Spelling config
+hi clear SpellBad
+hi SpellBad cterm=undercurl
+
 " Switching themes
-let g:cycle_colors=['candy', 'summerfruit256', 'Monokai', 'PaperColor']
-" let g:cycle_colors=['spacecamp', 'summerfruit256']
+let g:cycle_colors=[]
+call add(g:cycle_colors, ['dark', 'candy'])
+call add(g:cycle_colors, ['light', 'PaperColor'])
+call add(g:cycle_colors, ['dark', 'Monokai'])
+call add(g:cycle_colors, ['light', 'summerfruit256'])
 function CycleTheme()
     " if current color is last
     let l:current_color = g:colors_name
     let l:next_color = 0
 
-    if current_color !=? g:cycle_colors[-1]
-        for thecolor in g:cycle_colors
+    if current_color !=? g:cycle_colors[-1][1]
+        for thetheme in g:cycle_colors
+            let thebackground = thetheme[0]
+            let thecolor = thetheme[1]
             let l:next_color += 1
             if l:current_color == thecolor
                 break
@@ -69,13 +81,19 @@ function CycleTheme()
         endfor
     endif
 
-    echom '-> ' . g:cycle_colors[l:next_color]
-    execute 'colors ' . g:cycle_colors[l:next_color]
+    execute 'set background=' . g:cycle_colors[l:next_color][0]
+    execute 'colors ' . g:cycle_colors[l:next_color][1]
+endfunction
+
+function CycleThemeReset()
+    execute 'set background=' . g:cycle_colors[0][0]
+    execute 'colors ' . g:cycle_colors[0][1]
 endfunction
 map <silent> <C-c> :call CycleTheme()<CR>
 
 " Plug
 call plug#begin('~/.vim-plug')
+
 " Utils plugins
 Plug 'stephpy/vim-yaml'
 Plug 'rking/ag.vim'
@@ -128,11 +146,7 @@ nnoremap <silent> <Space><Space> :CocCommand<CR>
 " Colors
 Plug 'flazz/vim-colorschemes'
 Plug 'jaredgorski/spacecamp'
-
-filetype plugin indent on
 call plug#end()
 
-execute 'colors ' . g:cycle_colors[0]
-
-hi clear SpellBad
-hi SpellBad cterm=undercurl
+" Things that need to be configured after Plug
+call CycleThemeReset()
