@@ -57,7 +57,7 @@ filetype plugin indent on
 
 " Spelling config
 hi clear SpellBad
-hi SpellBad cterm=undercurl
+" hi SpellBad cterm=undercurl
 
 " Switching themes
 let g:cycle_colors=[]
@@ -106,6 +106,7 @@ let g:ctrlp_custom_ignore = {
 Plug 'vim-airline/vim-airline'
 
 " Syntax
+Plug 'sheerun/vim-polyglot'
 Plug 'pangloss/vim-javascript'
 let g:javascript_plugin_jsdoc = 1
 Plug 'mxw/vim-jsx'
@@ -131,6 +132,7 @@ Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 
 " Format selection
 vmap <C-f>  <Plug>(coc-format-selected)
@@ -142,6 +144,12 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " Double tap space to list COC commands
 nnoremap <silent> <Space><Space> :CocCommand<CR>
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+set cmdheight=2
+set updatetime=300
+set signcolumn=yes
+
 
 " Colors
 Plug 'flazz/vim-colorschemes'
