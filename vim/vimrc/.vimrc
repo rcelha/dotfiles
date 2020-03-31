@@ -57,7 +57,7 @@ filetype plugin indent on
 
 " Spelling config
 hi clear SpellBad
-" hi SpellBad cterm=undercurl
+hi SpellBad cterm=undercurl ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 
 " Switching themes
 let g:cycle_colors=[]
@@ -65,6 +65,7 @@ call add(g:cycle_colors, ['dark', 'candy'])
 call add(g:cycle_colors, ['light', 'PaperColor'])
 call add(g:cycle_colors, ['dark', 'Monokai'])
 call add(g:cycle_colors, ['light', 'summerfruit256'])
+call add(g:cycle_colors, ['dark', 'pencil'])
 function CycleTheme()
     " if current color is last
     let l:current_color = g:colors_name
@@ -93,6 +94,12 @@ map <silent> <C-c> :call CycleTheme()<CR>
 
 " Plug
 call plug#begin('~/.vim-plug')
+
+" Distraction free mode
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " Utils plugins
 Plug 'stephpy/vim-yaml'
