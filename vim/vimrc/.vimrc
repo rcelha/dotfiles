@@ -62,10 +62,7 @@ hi SpellBad cterm=undercurl ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 " Switching themes
 let g:cycle_colors=[]
 call add(g:cycle_colors, ['dark', 'candy'])
-call add(g:cycle_colors, ['light', 'PaperColor'])
-call add(g:cycle_colors, ['dark', 'Monokai'])
-call add(g:cycle_colors, ['light', 'summerfruit256'])
-call add(g:cycle_colors, ['dark', 'pencil'])
+call add(g:cycle_colors, ['light', 'pencil'])
 function CycleTheme()
     " if current color is last
     let l:current_color = g:colors_name
@@ -102,7 +99,6 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
 " Utils plugins
-Plug 'stephpy/vim-yaml'
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_custom_ignore = {
@@ -110,29 +106,13 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll|pyc|class|png|jpg)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
-Plug 'vim-airline/vim-airline'
 
-" Syntax
-Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
-let g:javascript_plugin_jsdoc = 1
-Plug 'mxw/vim-jsx'
-let g:jsx_ext_required = 0
-Plug 'leafgarland/typescript-vim'
-Plug 'jeroenbourgois/vim-actionscript', { 'for': 'actionscript' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-let g:vim_markdown_folding_disabled = 1
-Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
-Plug 'fatih/vim-go'
-Plug 'saltstack/salt-vim'
-Plug 'tpope/vim-fugitive'
-Plug 'rust-lang/rust.vim'
-Plug 'rodjek/vim-puppet'
-Plug 'airblade/vim-gitgutter'
-Plug 'mustache/vim-mustache-handlebars'
+Plug 'vim-airline/vim-airline'  " Status bar
+Plug 'sheerun/vim-polyglot'  " Syntax pack
+Plug 'tpope/vim-fugitive'  " Git commands
+Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
 
 " COC
-" Plug 'dense-analysis/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
@@ -160,7 +140,6 @@ set signcolumn=yes
 
 " Colors
 Plug 'flazz/vim-colorschemes'
-Plug 'jaredgorski/spacecamp'
 call plug#end()
 
 " Things that need to be configured after Plug
