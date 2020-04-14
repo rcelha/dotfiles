@@ -81,6 +81,7 @@ function CycleTheme()
 
     execute 'set background=' . g:cycle_colors[l:next_color][0]
     execute 'colors ' . g:cycle_colors[l:next_color][1]
+    execute 'AirlineTheme ' . g:cycle_colors[l:next_color][0]
 endfunction
 
 function CycleThemeReset()
@@ -108,6 +109,7 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 Plug 'vim-airline/vim-airline'  " Status bar
+Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'  " Syntax pack
 Plug 'tpope/vim-fugitive'  " Git commands
 Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
@@ -124,6 +126,7 @@ Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 " Format selection
 vmap <C-f>  <Plug>(coc-format-selected)
 nmap <C-f>  <Plug>(coc-format-selected)
+command! -nargs=0 CocFormat :call CocAction('format')
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
