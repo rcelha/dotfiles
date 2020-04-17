@@ -39,9 +39,15 @@ set clipboard=unnamed
 
 " multitab
 " set tabpagemax=15 "15 tabs per instance
-map <C-m> <Esc>:tabn<CR>
-map <C-n> <Esc>:tabp<CR>
-map <C-l> <Esc>:tabs<CR>
+" map <C-m> <Esc>:tabn<CR>
+" map <C-n> <Esc>:tabp<CR>
+" map <C-l> <Esc>:tabs<CR>
+
+" Use buffers for multiple files
+set hidden  " Hides buffer instead of closing
+map <C-m> <Esc>:bn<CR>
+map <C-n> <Esc>:bp<CR>
+map <C-l> <Esc>:ls<CR>
 
 " move line
 nnoremap <C-j> :m+<CR>==
@@ -109,10 +115,14 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 Plug 'vim-airline/vim-airline'  " Status bar
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'  " Status bar themes
+Plug 'edkolev/tmuxline.vim'  "  Tmux bar integration
 Plug 'sheerun/vim-polyglot'  " Syntax pack
 Plug 'tpope/vim-fugitive'  " Git commands
 Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
+
+" Colors
+Plug 'flazz/vim-colorschemes'
 
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -136,14 +146,18 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <Space><Space> :CocCommand<CR>
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-set cmdheight=2
 set updatetime=300
 set signcolumn=yes
 
 
-" Colors
-Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 " Things that need to be configured after Plug
 call CycleThemeReset()
+
+" Use airline to dislpay buffers and tabs
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tmuxline#enabled = 1
+" Configure tmux airline to be minimalistic
+let g:tmuxline_preset = 'minimal'
+let g:tmuxline_powerline_separators = 0

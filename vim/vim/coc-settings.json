@@ -1,4 +1,3 @@
 {
-  "python.venvFolders": [".venv", "envs", ".pyenv", ".direnv"],
-  "coc.preferences.jumpCommand": "tab drop"
+  "python.venvFolders": [".venv", "envs", ".pyenv", ".direnv"]
 }
