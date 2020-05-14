@@ -9,7 +9,6 @@ alias l='ls -Flh --group-directories-first'
 alias ll="l -a"
 alias ..="cd .."
 alias ...="cd ../.."
-alias vim="vim -p"
 alias grep="grep --exclude-dir=node_modules --color"
 
 alias httpserver="python -m SimpleHTTPServer"
