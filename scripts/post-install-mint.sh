@@ -3,21 +3,21 @@ set -ex;
 # General
 sudo apt-get update
 sudo apt-get install -y \
-	vim \
-	git  \
-	tmux \
-	zsh \
-	curl \
-	silversearcher-ag \
-	caffeine \
-	indicator-cpufreq \
-	myrepos \
-	keepassxc \
-	xsel xclip \
-	htop \
-	numix-icon-theme \
-	numix-icon-theme-circle \
-	kitty stow jq ctop cheese fzf;
+    vim \
+    git  \
+    tmux \
+    zsh \
+    curl \
+    silversearcher-ag \
+    caffeine \
+    indicator-cpufreq \
+    myrepos \
+    keepassxc \
+    xsel xclip \
+    htop \
+    numix-icon-theme \
+    numix-icon-theme-circle \
+    kitty stow jq ctop cheese fzf;
 
 # oh my zsh
 if [ ! -d ~/.oh-my-zsh ]; then
@@ -44,6 +44,9 @@ wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo apt-key add -
 
 sudo apt-get update
 sudo apt-get -y install enpass
+
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --no-modify-path
 
 # change default shell
 chsh -s $(which zsh)
