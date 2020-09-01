@@ -7,6 +7,10 @@ source $ZSH/oh-my-zsh.sh
 source ${HOME}/.profile
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
+
+
 
 zstyle ':completion:*:make:*:targets' call-command true # outputs all possible results for make targets
 zstyle ':completion:*:make:*' tag-order targets
