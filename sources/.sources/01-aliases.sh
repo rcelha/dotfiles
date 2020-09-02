@@ -1,4 +1,5 @@
-if grep -q darwin <<<$OSTYPE; then
+if [ "$OSTYPE" = "darwin" ]
+then
     alias ls="gls --color=auto"
 else
     alias ls="ls --color=auto"
@@ -18,15 +19,18 @@ json_format () {
 }
 
 alert() {
-    if grep -q darwin <<<$OSTYPE; then
+    if [ "$OSTYPE" = "darwin" ]
+    then
         osascript -e 'display notification with title "'$1'"'
+    else
+        notify-send "$1"
     fi
 }
 
-if grep -q darwin <<<$OSTYPE; then
+if [ "$OSTYPE" = "darwin" ]
+then
     alias brave="open -a Brave\ Browser"
     alias chrome="open -a Google\ Chrome"
 else
     alias open=xdg-open
 fi
-
