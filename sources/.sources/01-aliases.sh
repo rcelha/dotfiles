@@ -26,5 +26,7 @@ alert() {
 if grep -q darwin <<<$OSTYPE; then
     alias brave="open -a Brave\ Browser"
     alias chrome="open -a Google\ Chrome"
+else
+    alias open=xdg-open
 fi
 
