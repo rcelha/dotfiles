@@ -21,5 +21,23 @@
 [push]
     default = simple
 
+[pull]
+    rebase = true
+
 [includeIf "gitdir:~/repos/dw/"]
     path = ~/repos/dw/.gitconfig
+
+[includeIf "gitdir:~/repos/digit/"]
+    path = ~/repos/digit/.gitconfig
+
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+
+[credential]
+        helper = osxkeychain
+
+[diff "sopsdiffer"]
+	textconv = sops -d
