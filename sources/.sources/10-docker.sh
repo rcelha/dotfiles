@@ -2,19 +2,19 @@
 
 alias aws_="docker run -it --rm -v ${HOME}/.aws:/root/.aws anigeo/awscli"
 
+alias docker-local="docker run -it --rm -v ${PWD}:${PWD} -w ${PWD}"
+
+# https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285
 torbrowser(){
-    xhost +
-    docker rm torbrowser
-    docker run -d \
-        -v /etc/localtime:/etc/localtime:ro \
+    export HOSTNAME=`hostname`
+    xhost + ${hostname}
+    docker run -it --rm \
         -v /tmp/.X11-unix:/tmp/.X11-unix \
-        -e DISPLAY=unix$DISPLAY \
+        -e DISPLAY=${HOSTNAME}:0 \
         -e GDK_SCALE \
         -e GDK_DPI_SCALE \
-        --device /dev/snd \
         --group-add audio \
-        --name torbrowser \
-        rcelha/tor-browser
+        jess/tor-browser
 }
 
 # docker utils
