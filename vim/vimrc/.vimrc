@@ -116,6 +116,7 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }  " markdown preview
 Plug 'vim-airline/vim-airline'  " Status bar
 Plug 'vim-airline/vim-airline-themes'  " Status bar themes
 Plug 'edkolev/tmuxline.vim'  "  Tmux bar integration
@@ -134,10 +135,20 @@ Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
+" COC colors
+""
+func! s:my_colors_setup() abort
+    hi Pmenu ctermbg=black ctermfg=white
+endfunc
+
+augroup colorscheme_coc_setup | au!
+    au ColorScheme * call s:my_colors_setup()
+augroup END
 
 " Format selection
 vmap <C-f>  <Plug>(coc-format-selected)
-nmap <C-f>  <Plug>(coc-format-selected)
+nmap <C-f>  <Plug>(coc-format)
 command! -nargs=0 CocFormat :call CocAction('format')
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -148,6 +159,7 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <Space><Space> :CocCommand<CR>
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
+inoremap <silent><expr> <c-@> coc#refresh()
 set updatetime=300
 set signcolumn=yes
 
