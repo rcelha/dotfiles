@@ -34,7 +34,9 @@ set showmatch "show {} and [] open/close tags
 
 " Copy and Paste from transfer area
 set pastetoggle=<F2> "copy mode
-set clipboard=unnamed
+set clipboard^=unnamed,unnamedplus
+
+" Code Highlight
 
 
 " multitab
