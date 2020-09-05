@@ -17,6 +17,7 @@ sudo apt-get install -y \
     htop \
     numix-icon-theme \
     numix-icon-theme-circle \
+    fonts-firacode \
     kitty stow jq ctop cheese fzf;
 
 # oh my zsh
