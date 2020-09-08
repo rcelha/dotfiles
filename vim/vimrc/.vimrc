@@ -69,33 +69,27 @@ hi SpellBad cterm=undercurl ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 
 " Switching themes
 let g:cycle_colors=[]
-call add(g:cycle_colors, ['dark', 'two-firewatch', 'dark'])
+let g:cycle_colors_current_index=0
+call add(g:cycle_colors, ['dark', 'papercolor', 'dark'])
 call add(g:cycle_colors, ['light', 'papercolor', 'papercolor'])
-function CycleTheme()
-    " if current color is last
-    let l:current_color = g:colors_name
-    let l:next_color = 0
-
-    if current_color !=? g:cycle_colors[-1][1]
-        for thetheme in g:cycle_colors
-            let thebackground = thetheme[0]
-            let thecolor = thetheme[1]
-            let l:next_color += 1
-            if l:current_color == thecolor
-                break
-            endif
-        endfor
-    endif
-
-    execute 'set background=' . g:cycle_colors[l:next_color][0]
-    execute 'colors ' . g:cycle_colors[l:next_color][1]
-    execute 'AirlineTheme ' . g:cycle_colors[l:next_color][2]
-endfunction
 
 function CycleThemeReset()
-    execute 'set background=' . g:cycle_colors[0][0]
-    execute 'colors ' . g:cycle_colors[0][1]
+    execute 'set background=' . g:cycle_colors[g:cycle_colors_current_index][0]
+    execute 'colors ' . g:cycle_colors[g:cycle_colors_current_index][1]
+    if exists(':AirlineTheme')
+        execute 'AirlineTheme ' . g:cycle_colors[g:cycle_colors_current_index][2]
+    endif
 endfunction
+
+function CycleTheme()
+    if g:cycle_colors_current_index + 1 >= len(g:cycle_colors)
+        let g:cycle_colors_current_index = 0
+    else
+        let g:cycle_colors_current_index = g:cycle_colors_current_index + 1
+    endif
+    call CycleThemeReset()
+endfunction
+
 map <silent> <C-c> :call CycleTheme()<CR>
 
 " Plug
@@ -163,11 +157,10 @@ inoremap <silent><expr> <c-@> coc#refresh()
 set updatetime=300
 set signcolumn=yes
 
-
 call plug#end()
 
+""
 " Things that need to be configured after Plug
-call CycleThemeReset()
 
 " Use airline to dislpay buffers and tabs
 let g:airline#extensions#tabline#enabled = 1
@@ -175,3 +168,6 @@ let g:airline#extensions#tmuxline#enabled = 1
 " Configure tmux airline to be minimalistic
 let g:tmuxline_preset = 'minimal'
 let g:tmuxline_powerline_separators = 0
+
+" Set theme with cycletheme
+autocmd User AirlineAfterInit call CycleThemeReset()
