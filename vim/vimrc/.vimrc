@@ -69,8 +69,8 @@ hi SpellBad cterm=undercurl ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 
 " Switching themes
 let g:cycle_colors=[]
-call add(g:cycle_colors, ['dark', 'candy'])
-call add(g:cycle_colors, ['light', 'pencil'])
+call add(g:cycle_colors, ['dark', 'two-firewatch', 'dark'])
+call add(g:cycle_colors, ['light', 'papercolor', 'papercolor'])
 function CycleTheme()
     " if current color is last
     let l:current_color = g:colors_name
@@ -89,7 +89,7 @@ function CycleTheme()
 
     execute 'set background=' . g:cycle_colors[l:next_color][0]
     execute 'colors ' . g:cycle_colors[l:next_color][1]
-    execute 'AirlineTheme ' . g:cycle_colors[l:next_color][0]
+    execute 'AirlineTheme ' . g:cycle_colors[l:next_color][2]
 endfunction
 
 function CycleThemeReset()
