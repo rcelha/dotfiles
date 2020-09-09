@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -ex
+
 if [ ! `which stow` ]; then
     echo Install GNU stow
     echo exit; exit 1

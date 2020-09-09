@@ -70,8 +70,8 @@ hi SpellBad cterm=undercurl ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 " Switching themes
 let g:cycle_colors=[]
 let g:cycle_colors_current_index=0
-call add(g:cycle_colors, ['dark', 'papercolor', 'dark'])
-call add(g:cycle_colors, ['light', 'papercolor', 'papercolor'])
+call add(g:cycle_colors, ['dark', 'PaperColor', 'dark'])
+call add(g:cycle_colors, ['light', 'PaperColor', 'papercolor'])
 
 function CycleThemeReset()
     execute 'set background=' . g:cycle_colors[g:cycle_colors_current_index][0]
@@ -120,6 +120,7 @@ Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
 
 " Colors
 Plug 'flazz/vim-colorschemes'
+Plug 'NLKNguyen/papercolor-theme'
 
 " COC
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
