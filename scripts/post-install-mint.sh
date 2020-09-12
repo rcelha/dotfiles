@@ -18,6 +18,7 @@ sudo apt-get install -y \
     numix-icon-theme \
     numix-icon-theme-circle \
     fonts-firacode \
+    docker.io docker-compose \
     kitty stow jq ctop cheese fzf;
 
 # oh my zsh
@@ -51,3 +52,6 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --no-m
 
 # change default shell
 chsh -s $(which zsh)
+
+# groups
+sudo usermod -aG docker rcelha
