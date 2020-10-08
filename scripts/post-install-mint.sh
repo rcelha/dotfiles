@@ -3,23 +3,37 @@ set -ex;
 # General
 sudo apt-get update
 sudo apt-get install -y \
-    vim \
-    git  \
-    tmux \
-    zsh \
-    curl \
-    silversearcher-ag \
     caffeine \
-    indicator-cpufreq \
-    myrepos \
-    keepassxc \
-    xsel xclip \
+    cheese \
+    ctop \
+    curl \
+    docker-compose \
+    docker.io \
+    dropbox \
+    fonts-firacode \
+    fzf \
+    gcc-multilib \
+    git  \
     htop \
+    indicator-cpufreq \
+    jq \
+    keepassxc \
+    kitty \
+    myrepos \
     numix-icon-theme \
     numix-icon-theme-circle \
-    fonts-firacode \
-    docker.io docker-compose \
-    kitty stow jq ctop cheese fzf;
+    pipenv \
+    silversearcher-ag \
+    stow \
+    tmux \
+    vim \
+    vim-gtk \
+    virtualbox \
+    virtualbox-ext-pack \
+    xclip \
+    xsel \
+    zsh \
+    ;
 
 # oh my zsh
 if [ ! -d ~/.oh-my-zsh ]; then
