@@ -28,8 +28,6 @@ sudo apt-get install -y \
     tmux \
     vim \
     vim-gtk \
-    virtualbox \
-    virtualbox-ext-pack \
     xclip \
     xsel \
     zsh \
