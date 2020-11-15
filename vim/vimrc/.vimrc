@@ -135,13 +135,13 @@ Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 " COC colors
 ""
-func! s:my_colors_setup() abort
-    hi Pmenu ctermbg=black ctermfg=white
-endfunc
-
-augroup colorscheme_coc_setup | au!
-    au ColorScheme * call s:my_colors_setup()
-augroup END
+function MyColorSetup() abort
+    hi CocErrorSign  ctermfg=Red guifg=#ff0000
+    hi CocWarningSign  ctermfg=Brown guifg=#ff922b
+    hi CocInfoSign  ctermfg=Yellow guifg=#fab005
+    hi CocHintSign  ctermfg=Blue guifg=#15aabf
+    hi CocUnderline  cterm=underline gui=underline
+endfunction
 
 " Format selection
 vmap <C-f>  <Plug>(coc-format-selected)
@@ -156,7 +156,12 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> <Space><Space> :CocCommand<CR>
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-inoremap <silent><expr> <c-@> coc#refresh()
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 set updatetime=300
 set signcolumn=yes
 
@@ -173,4 +178,7 @@ let g:tmuxline_preset = 'minimal'
 let g:tmuxline_powerline_separators = 0
 
 " Set theme with cycletheme
-autocmd User AirlineAfterInit call CycleThemeReset()
+autocmd User AirlineAfterInit
+            \ call CycleThemeReset() |
+            \ call MyColorSetup()
+autocmd ColorScheme * call MyColorSetup()
