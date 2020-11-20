@@ -10,6 +10,7 @@ sudo apt-get install -y \
     docker-compose \
     docker.io \
     dropbox \
+    entr \
     fonts-firacode \
     fzf \
     gcc-multilib \
