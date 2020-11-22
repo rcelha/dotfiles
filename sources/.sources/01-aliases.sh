@@ -34,3 +34,8 @@ then
 else
     alias open=xdg-open
 fi
+
+which nvim > /dev/null  && {
+    alias vim=nvim
+    alias vi=nvim
+}
