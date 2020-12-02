@@ -9,26 +9,27 @@
 	graphb = log --graph --decorate --oneline
 	graph = log --graph --decorate --oneline --all
 	changelog = log --pretty=format:'%C(yellow)%h%C(reset) %s %C(bold blue)%an%C(reset)%n%b' --abbrev-commit --date=relative
-    # git changelog master..
+	# git changelog master..
 	changedfiles = diff --name-status
-    # git changedfiles master...
+	# git changedfiles master...
 	branchdiff = diff master...
 	tags = describe --abbrev=0 --tags
 
 [core]
 	editor = vim -c :1
+	pager = delta
 
 [push]
-    default = simple
+	default = simple
 
 [pull]
-    rebase = true
+	rebase = true
 
 [includeIf "gitdir:~/repos/dw/"]
-    path = ~/repos/dw/.gitconfig
+	path = ~/repos/dw/.gitconfig
 
 [includeIf "gitdir:~/repos/digit/"]
-    path = ~/repos/digit/.gitconfig
+	path = ~/repos/digit/.gitconfig
 
 [filter "lfs"]
 	process = git-lfs filter-process
@@ -37,7 +38,19 @@
 	smudge = git-lfs smudge -- %f
 
 [credential]
-        helper = osxkeychain
+	helper = osxkeychain
 
 [diff "sopsdiffer"]
 	textconv = sops -d
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	features = side-by-side line-numbers decorations
+	whitespace-error-style = 22 reverse
+
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
