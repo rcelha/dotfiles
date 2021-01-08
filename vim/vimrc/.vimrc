@@ -112,7 +112,7 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }  " markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm i'  }  " markdown preview
 Plug 'vim-airline/vim-airline'  " Status bar
 Plug 'vim-airline/vim-airline-themes'  " Status bar themes
 Plug 'edkolev/tmuxline.vim'  "  Tmux bar integration
@@ -125,14 +125,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'NLKNguyen/papercolor-theme'
 
 " COC
+let g:coc_global_extensions = ['coc-python', 'coc-yaml', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-lists', 'coc-rust-analyzer' ]
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
-Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
-Plug 'fannheyward/coc-rust-analyzer', {'do': 'yarn install --frozen-lockfile'}
 " COC colors
 ""
 function MyColorSetup() abort

@@ -41,8 +41,8 @@ fi
 
 # FNM
 curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash -s -- --skip-shell
-~/.fnm/fnm install "latest-erbium"
-~/.fnm/fnm default "latest-erbium"
+~/.fnm/fnm install v12.20.1
+~/.fnm/fnm default v12.20.1
 
 # Brave
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | \
