@@ -18,4 +18,4 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format '%B%d%b'
 
 # fnm
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
