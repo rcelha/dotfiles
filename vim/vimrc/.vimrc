@@ -125,7 +125,7 @@ Plug 'flazz/vim-colorschemes'
 Plug 'NLKNguyen/papercolor-theme'
 
 " COC
-let g:coc_global_extensions = ['coc-python', 'coc-yaml', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-lists', 'coc-rust-analyzer' ]
+let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-lists', 'coc-rust-analyzer' ]
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " COC colors
 ""
