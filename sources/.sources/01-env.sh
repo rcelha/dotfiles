@@ -7,6 +7,8 @@ export PATH=$HOME/Library/Python/3.6/bin:$PATH
 export PATH=$HOME/local/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/.fnm:$PATH
+export PATH=$HOME/.poetry/bin:$PATH
+
 
 export LD_LIBRARY_PATH=$HOME/local/lib:$LD_LIBRARY_PATH
 
