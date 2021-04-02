@@ -1,3 +1,8 @@
-if [ $(which pyenv &> /dev/null) ]; then
+export PATH="$HOME/.pyenv/bin:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+
+which pyenv > /dev/null  && {
   eval "$(pyenv init -)"
-fi
+  eval "$(pyenv virtualenv-init -)"
+}
+

@@ -1,3 +1,5 @@
-if [ $(which kubectl &> /dev/null) ]; then
+which kubectl > /dev/null  && {
     source <(kubectl completion zsh)
-fi
+}
+
+alias k=kubectl
