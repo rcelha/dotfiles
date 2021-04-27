@@ -21,6 +21,7 @@ sudo apt-get install -y \
     keepassxc \
     kitty \
     myrepos \
+    neovim \
     numix-icon-theme \
     numix-icon-theme-circle \
     silversearcher-ag \
