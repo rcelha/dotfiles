@@ -1,5 +1,5 @@
-# General aliases, functions and overrides
 
+# General aliases, functions and overrides
 if [ "$(uname -s)" = "Darwin" ]
 then
     alias ls="gls --color=auto"
@@ -34,7 +34,7 @@ else
     alias open=xdg-open
 fi
 
-which nvim > /dev/null  && {
+which nvim > /dev/null 2>&1 && {
     alias vim=nvim
     alias vi=nvim
 }

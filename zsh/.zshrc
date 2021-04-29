@@ -18,4 +18,6 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*:descriptions' format '%B%d%b'
 
 # fnm
-eval "$(fnm env)"
+which fnm > /dev/null 2>&1 && {
+    eval "$(fnm env)"
+}

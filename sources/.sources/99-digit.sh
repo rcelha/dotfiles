@@ -1,1 +1,1 @@
-source ~/dotfiles/.run
+[ -f $HOME/dotfiles/.run ] && source $HOME/dotfiles/.run
