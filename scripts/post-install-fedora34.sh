@@ -13,7 +13,6 @@ sudo dnf install -y \
     kitty \
     logiops \
     myrepos \
-    nautilus-dropbox \
     neovim \
     nodejs \
     stow \
@@ -52,7 +51,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --no-m
 sudo usermod -s $(which zsh) $USERNAME
 
 # groups
-sudo usermod -aG docker rcelha
+sudo usermod -aG docker $USERNAME
 
 # oh my zsh
 if [ ! -d ~/.oh-my-zsh ]; then

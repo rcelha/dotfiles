@@ -10,12 +10,14 @@ fi;
 # Prepare
 mkdir -p ~/.vim
 mkdir -p ~/.ssh/config.d
+mkdir -p ~/.config/nvim
 
 # Install
 stow -t ~ general
 stow -t ~ sources
 stow -t ~ tmux
 stow -t ~/ -d vim vimrc
+stow -t ~/.config/nvim -d vim nvim
 stow -t ~/.vim -d vim vim
 stow -t ~ zsh
 stow -t ~/.ssh ssh
