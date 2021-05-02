@@ -58,5 +58,6 @@ if [ ! -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended --keep-zshrc
 fi
 
-# Enable logiops
+# Configure and Enable logiops
+sudo cp logid.cfg /etc/logid.cfg
 sudo systemctl enable --now logid
