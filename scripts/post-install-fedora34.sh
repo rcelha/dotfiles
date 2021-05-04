@@ -7,6 +7,7 @@ sudo dnf install -y \
     entr \
     fzf \
     git  \
+    git-delta \
     htop \
     jq \
     keepassxc \
