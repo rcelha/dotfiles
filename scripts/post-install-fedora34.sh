@@ -9,6 +9,7 @@ sudo dnf install -y \
     git  \
     git-delta \
     htop \
+    jetbrains-mono-fonts-all \
     jq \
     keepassxc \
     kitty \
@@ -17,7 +18,7 @@ sudo dnf install -y \
     neovim \
     nodejs \
     stow \
-    the_silver_searcher /
+    the_silver_searcher \
     tmux \
     vim-enhanced \
     xclip \
