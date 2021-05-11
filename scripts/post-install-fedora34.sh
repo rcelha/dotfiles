@@ -17,6 +17,7 @@ sudo dnf install -y \
     neovim \
     nodejs \
     stow \
+    the_silver_searcher /
     tmux \
     vim-enhanced \
     xclip \
