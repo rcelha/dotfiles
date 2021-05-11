@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Hibernate and reboot into Windows
+Terminal=false
+Comment=gddccontrol ddccontrol
+Exec=pkexec /home/rcelha/local/bin/hibereboot
+Icon=/home/rcelha/local/bin/windows.png

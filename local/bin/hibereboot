@@ -1,0 +1,47 @@
+#!/bin/sh
+set -e
+
+# hibereboot: A 'hibernate & reboot' one-shot hack script for systemd-based hosts
+#
+# Place this script somewhere in your $PATH and run it (as root) to hibernate and reboot.
+# For full automation, allow the script to be run with passwordless-sudo:
+#
+#    > /etc/sudoers
+#    yourusername ALL=(ALL) SETENV:NOPASSWD: /path/to/hibereboot
+#
+# This script is hosted at
+#    https://gist.github.com/frebib/4d8eff2528237b86c7108dc5cbe6f54b
+# Adapted from
+#   https://gist.github.com/setzer22/77b1dc4b226fdf2dee83e6399e30558b
+
+if [ $EUID != 0 ]; then
+    2>&1 echo "Error: Not running as root"
+    2>&1 echo "Exiting..."
+    exit 1;
+fi
+
+if [ -f /etc/systemd/sleep.conf ]; then
+    mv /etc/systemd/sleep.conf /etc/systemd/sleep.conf.bak
+fi
+printf "# This file was created by hibereboot\n[Sleep]\nHibernateMode=reboot" > /etc/systemd/sleep.conf
+
+mkdir -p /usr/lib/systemd/system-sleep/
+cat <<EOF > /usr/lib/systemd/system-sleep/hibereboot-post
+#!/bin/sh
+set -e
+
+if [ \$1 == 'post' ] && [ \$2 == 'hibernate' ]; then
+    if grep -q 'hibereboot' /etc/systemd/sleep.conf; then
+        rm -f /etc/systemd/sleep.conf
+    fi
+    if [ -f /etc/systemd/sleep.conf.bak ]; then
+        mv /etc/systemd/sleep.conf.bak /etc/systemd/sleep.conf
+    fi
+    
+    # Destroy self
+    rm -f -- "\$0"
+fi
+EOF
+chmod +x /usr/lib/systemd/system-sleep/hibereboot-post
+efibootmgr --bootnext 0000
+systemctl hibernate

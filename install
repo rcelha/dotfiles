@@ -11,6 +11,7 @@ fi;
 mkdir -p ~/.vim
 mkdir -p ~/.ssh/config.d
 mkdir -p ~/.config/nvim
+mkdir -p ~/local/bin
 
 # Install
 stow -t ~ general
@@ -21,6 +22,7 @@ stow -t ~/.config/nvim -d vim nvim
 stow -t ~/.vim -d vim vim
 stow -t ~ zsh
 stow -t ~/.ssh ssh
+stow -t ~/local/bin -d ./local/bin/ .
 
 # Install vim plugins
 vim -c "PlugInstall|qa" 
