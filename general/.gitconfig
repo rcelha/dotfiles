@@ -25,9 +25,6 @@
 [pull]
 	rebase = true
 
-[includeIf "gitdir:~/repos/dw/"]
-	path = ~/repos/dw/.gitconfig
-
 [includeIf "gitdir:~/repos/digit/"]
 	path = ~/repos/digit/.gitconfig
 
