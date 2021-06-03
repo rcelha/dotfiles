@@ -18,6 +18,7 @@ sudo dnf install -y \
     neovim \
     nodejs \
     stow \
+    tealdeer \
     the_silver_searcher \
     tmux \
     vim-enhanced \
