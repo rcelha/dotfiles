@@ -4,6 +4,8 @@ alias aws_="docker run -it --rm -v ${HOME}/.aws:/root/.aws anigeo/awscli"
 
 alias docker-local="docker run -it --rm -v ${PWD}:${PWD} -w ${PWD}"
 
+alias ctop="docker run --rm -ti --name=ctop --volume /var/run/docker.sock:/var/run/docker.sock:ro quay.io/vektorlab/ctop:latest"
+
 # https://gist.github.com/cschiewek/246a244ba23da8b9f0e7b11a68bf3285
 torbrowser(){
     export HOSTNAME=`hostname`
