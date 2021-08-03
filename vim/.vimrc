@@ -36,9 +36,6 @@ set showmatch "show {} and [] open/close tags
 set pastetoggle=<F2> "copy mode
 set clipboard^=unnamed,unnamedplus
 
-" Code Highlight
-
-
 " multitab
 " set tabpagemax=15 "15 tabs per instance
 " map <C-m> <Esc>:tabn<CR>
@@ -56,6 +53,21 @@ nnoremap <C-j> :m+<CR>==
 nnoremap <C-k> :m-2<CR>==
 vnoremap <C-j> :m'>+<CR>gv=gv
 vnoremap <C-k> :m-2<CR>gv=gv
+
+" Y copies until the end of the line
+nnoremap Y y$
+
+" Keeps cursor centered on n/N
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+" Breake undo sequence on stop characters
+inoremap , ,<C-g>u
+inoremap . .<C-g>u
+inoremap ! !<C-g>u
+inoremap ? ?<C-g>u
+inoremap : :<C-g>u
+inoremap ; ;<C-g>u
 
 set wildmode=list:full
 set wildmenu
