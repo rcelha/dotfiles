@@ -4,7 +4,7 @@ set encoding=utf8
 set t_Co=256
 " set background=dark
 
-syntax enable
+syntax on
 " tab as space
 set expandtab
 
@@ -127,7 +127,7 @@ let g:ctrlp_custom_ignore = {
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm i'  }  " markdown preview
 Plug 'vim-airline/vim-airline'  " Status bar
 Plug 'vim-airline/vim-airline-themes'  " Status bar themes
-Plug 'edkolev/tmuxline.vim'  "  Tmux bar integration
+Plug 'edkolev/tmuxline.vim'  " Tmux bar integration
 Plug 'sheerun/vim-polyglot'  " Syntax pack
 Plug 'tpope/vim-fugitive'  " Git commands
 Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
@@ -135,6 +135,11 @@ Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
 " Colors
 Plug 'flazz/vim-colorschemes'
 Plug 'NLKNguyen/papercolor-theme'
+Plug 'Rykka/riv.vim'  " RST plugin. Main use is for Python sphinx docstrings
+let g:riv_python_rst_hl=1
+let g:riv_highlight_code = 'python,rust,javascript,vim,sh'
+
+
 
 " COC
 let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-lists', 'coc-rust-analyzer' ]
