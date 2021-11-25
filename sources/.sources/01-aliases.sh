@@ -9,6 +9,7 @@ alias ll="l -a"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias json_format='python -m json.tool'
+alias unstick-gnome-software="killall gnome-software || true && rm -fr ~/.cache/gnome-software"
 
 # MacOsx only aliases and overrides
 if [ "$(uname -s)" = "Darwin" ]
