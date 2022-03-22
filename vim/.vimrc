@@ -166,6 +166,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " Double tap space to list COC commands
 nnoremap <silent> <Space><Space> :CocCommand<CR>
+" Double tab tab for COC actions
+nnoremap <silent> <Tab><Tab> :CocAction<CR>
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " Use <c-space> to trigger completion.
