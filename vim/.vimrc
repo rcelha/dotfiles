@@ -139,7 +139,13 @@ Plug 'Rykka/riv.vim'  " RST plugin. Main use is for Python sphinx docstrings
 let g:riv_python_rst_hl=1
 let g:riv_highlight_code = 'python,rust,javascript,vim,sh'
 
-
+" Highlight yanked
+Plug 'machakann/vim-highlightedyank'
+if !exists('##TextYankPost')
+  nmap y <Plug>(highlightedyank)
+  xmap y <Plug>(highlightedyank)
+  omap y <Plug>(highlightedyank)
+endif
 
 " COC
 let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-lists', 'coc-rust-analyzer' ]
