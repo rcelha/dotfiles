@@ -127,7 +127,6 @@ let g:ctrlp_custom_ignore = {
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm i'  }  " markdown preview
 Plug 'vim-airline/vim-airline'  " Status bar
 Plug 'vim-airline/vim-airline-themes'  " Status bar themes
-Plug 'edkolev/tmuxline.vim'  " Tmux bar integration
 Plug 'sheerun/vim-polyglot'  " Syntax pack
 Plug 'tpope/vim-fugitive'  " Git commands
 Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
@@ -186,10 +185,6 @@ call plug#end()
 
 " Use airline to dislpay buffers and tabs
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tmuxline#enabled = 1
-" Configure tmux airline to be minimalistic
-let g:tmuxline_preset = 'minimal'
-let g:tmuxline_powerline_separators = 0
 
 " Set theme with cycletheme
 autocmd User AirlineAfterInit
