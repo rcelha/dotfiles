@@ -43,9 +43,9 @@ set clipboard^=unnamed,unnamedplus
 " map <C-l> <Esc>:tabs<CR>
 
 " Use buffers for multiple files
-set hidden  " Hides buffer instead of closing
-map <C-m> <Esc>:bn<CR>
-map <C-n> <Esc>:bp<CR>
+" set hidden  " Hides buffer instead of closing
+map <C-n> <Esc>:bn<CR>
+map <C-b> <Esc>:bp<CR>
 map <C-l> <Esc>:ls<CR>
 
 " move line
