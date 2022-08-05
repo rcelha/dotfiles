@@ -1,7 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="robbyrussell"
 
-plugins=(git npm docker docker-compose colorize colored-man-pages yarn)
+plugins=(git npm docker docker-compose colorize colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 source ${HOME}/.profile
