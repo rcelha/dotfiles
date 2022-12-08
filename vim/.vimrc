@@ -153,11 +153,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " COC colors
 ""
 function MyColorSetup() abort
-    hi CocErrorSign  ctermfg=Red guifg=#ff0000
-    hi CocWarningSign  ctermfg=Brown guifg=#ff922b
-    hi CocInfoSign  ctermfg=Yellow guifg=#fab005
-    hi CocHintSign  ctermfg=Blue guifg=#15aabf
-    hi CocUnderline  cterm=underline gui=underline
+    " hi CocErrorSign  ctermfg=Red guifg=#ff0000
+    " hi CocWarningSign  ctermfg=Brown guifg=#ff922b
+    " hi CocInfoSign  ctermfg=Yellow guifg=#fab005
+    " hi CocHintSign  ctermfg=Blue guifg=#15aabf
+    " hi CocUnderline  cterm=underline gui=underline
 endfunction
 
 " Format selection

@@ -23,7 +23,8 @@ torbrowser(){
 alias docker-compose-dev="docker-compose -f docker-compose.yml -f docker-compose.dev.yml"
 
 buildthis () {
-    docker build -t rcelha/`basename ${PWD} ` .
+    imagename=`basename ${PWD} | tr '[:upper:]' '[:lower:]'`
+    docker build -t rcelha/${imagename} .
 }
 
 xrun () {
