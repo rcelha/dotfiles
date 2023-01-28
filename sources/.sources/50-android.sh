@@ -5,8 +5,11 @@ else
     export ANDROID_HOME=$HOME/Android/Sdk
 fi
 
-export NDK_HOME="$ANDROID_HOME/ndk/25.0.8775105"
+export NDK_HOME="$ANDROID_HOME/ndk/22.1.7171670"
+export ANDROID_NDK=$NDK_HOME
+
 export FLUTTER_HOME=$HOME/local/flutter
+export CHROME_EXECUTABLE=/opt/brave.com/brave/brave-browser
 
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/tools

@@ -148,7 +148,7 @@ if !exists('##TextYankPost')
 endif
 
 " COC
-let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-lists', 'coc-rust-analyzer', 'coc-toml']
+let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-lists', 'coc-rust-analyzer', 'coc-toml', 'coc-flutter']
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " COC colors
 ""
