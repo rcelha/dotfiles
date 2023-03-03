@@ -2,3 +2,4 @@ vim/vim/.netrwhist
 *.swp
 .DS_Store
 sources/.sources/99-*
+general/.local/state
