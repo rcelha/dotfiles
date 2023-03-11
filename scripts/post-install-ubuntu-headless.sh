@@ -48,21 +48,23 @@ if [ ! -d ~/.oh-my-zsh ]; then
 fi
 
 # FNM
-curl -fsSL https://github.com/Schniz/fnm/raw/master/.ci/install.sh | bash -s -- --skip-shell
-~/.fnm/fnm install v12.20.1
-~/.fnm/fnm default v12.20.1
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir ~/.fnm --skip-shell
+~/.fnm/fnm install --lts
+~/.fnm/fnm default lts/latest
 
 # Python dev tools
+rm -fr ~/.pyenv
 curl https://pyenv.run | bash
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
 pyenv install 3.9.2  # 'unset LDFLAGS' if permission error
 pyenv install 3.8.8
 pyenv global 3.9.2
-eval "$(pyenv init -)"
 
 python -m pip install --user pipx
 python -m pipx ensurepath
 
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
+curl -sSL https://install.python-poetry.org | python3 -
 
 # Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --no-modify-path
