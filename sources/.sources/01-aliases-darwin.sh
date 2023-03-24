@@ -4,6 +4,7 @@ then
     alias brave="open -a Brave\ Browser"
     alias chrome="open -a Google\ Chrome"
     alias stat=gstat
+    alias jq=gojq
 
     alert() {
         osascript -e 'display notification with title "'$1'"'
