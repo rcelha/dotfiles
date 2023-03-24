@@ -1,5 +1,9 @@
-vim/vim/.netrwhist
 *.swp
 .DS_Store
+
+vim/vim/.netrwhist
 sources/.sources/99-*
+ssh/.ssh/config.d/99-*
 general/.local/state
+general/.local/share/*
+!general/.local/share/applications
