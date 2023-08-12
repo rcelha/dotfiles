@@ -26,6 +26,7 @@ sudo apt-get install -y --no-install-recommends \
     git  \
     htop \
     indicator-cpufreq \
+    intel-basekit \
     jq \
     keepassxc \
     kitty \
@@ -47,6 +48,7 @@ sudo apt-get install -y --no-install-recommends \
     numix-icon-theme-circle \
     silversearcher-ag \
     stow \
+    tk-dev \
     tmux \
     vim \
     vim-gtk \

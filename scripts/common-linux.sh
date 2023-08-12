@@ -21,8 +21,8 @@ rm -fr ~/.pyenv
 curl https://pyenv.run | bash
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
-pyenv install 3.11
-pyenv global 3.11
+pyenv install 3.11-dev
+pyenv global 3.11-dev
 
 python -m pip install --user pipx
 python -m pipx ensurepath
