@@ -125,13 +125,14 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & npm i'  }  " markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'vim-airline/vim-airline'  " Status bar
 Plug 'vim-airline/vim-airline-themes'  " Status bar themes
 Plug 'sheerun/vim-polyglot'  " Syntax pack
 Plug 'tpope/vim-fugitive'  " Git commands
 Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
 Plug 'NoahTheDuke/vim-just' " https://github.com/casey/just
+Plug 'kshenoy/vim-signature'
 
 " Colors
 Plug 'flazz/vim-colorschemes'
