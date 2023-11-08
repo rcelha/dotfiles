@@ -21,3 +21,7 @@ zstyle ':completion:*:descriptions' format '%B%d%b'
 which fnm > /dev/null 2>&1 && {
     eval "$(fnm env)"
 }
+
+which just > /dev/null 2>&1 && {
+    eval "$(just --completions bash)"
+}

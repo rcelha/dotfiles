@@ -5,6 +5,7 @@ then
     alias chrome="open -a Google\ Chrome"
     alias stat=gstat
     alias jq=gojq
+    alias ttime="/usr/bin/time -h"
 
     alert() {
         osascript -e 'display notification with title "'$1'"'

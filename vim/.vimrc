@@ -118,8 +118,9 @@ let g:goyo_width = 120
 " Utils plugins
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
+let g:ctrlp_root_markers = ["pyproject.toml", "Cargo.toml"]
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|venv)|node_modules|__pycache__|env$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|venv)|node_modules|target|__pycache__|env$',
   \ 'file': '\v\.(exe|so|dll|pyc|class|png|jpg)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
@@ -147,17 +148,21 @@ if !exists('##TextYankPost')
   omap y <Plug>(highlightedyank)
 endif
 
+" Tabby ML
+Plug 'TabbyML/tabby', {'rtp': 'clients/vim'}
+let g:tabby_server_url = 'http://127.0.0.1:8080'
+
 " COC
-let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-lists', 'coc-rust-analyzer', 'coc-toml', 'coc-flutter', 'coc-pairs' ]
+let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-lists', 'coc-rust-analyzer', 'coc-toml', 'coc-flutter', 'coc-pairs', 'coc-clangd', 'coc-cmake' ]
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " COC colors
 ""
 function MyColorSetup() abort
-    " hi CocErrorSign  ctermfg=Red guifg=#ff0000
-    " hi CocWarningSign  ctermfg=Brown guifg=#ff922b
-    " hi CocInfoSign  ctermfg=Yellow guifg=#fab005
-    " hi CocHintSign  ctermfg=Blue guifg=#15aabf
-    " hi CocUnderline  cterm=underline gui=underline
+    hi CocErrorSign  ctermfg=Red guifg=#ff0000
+    hi CocWarningSign  ctermfg=Brown guifg=#ff922b
+    hi CocInfoSign  ctermfg=Yellow guifg=#fab005
+    hi CocHintSign  ctermfg=Blue guifg=#15aabf
+    hi CocUnderline  cterm=underline gui=underline
 endfunction
 
 " Format selection

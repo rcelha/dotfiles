@@ -1,3 +1,4 @@
 {
-  "python.venvFolders": [".venv", "envs", ".pyenv", ".direnv"]
+  "python.venvFolders": [".venv", "envs", ".pyenv", ".direnv"],
+  "python.formatting.provider": "black"
 }

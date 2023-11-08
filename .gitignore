@@ -5,5 +5,7 @@ vim/vim/.netrwhist
 sources/.sources/99-*
 ssh/.ssh/config.d/99-*
 general/.local/state
-general/.local/share/*
+general/.local/share
+general/.local/bin/
+general/.local/lib/
 !general/.local/share/applications
