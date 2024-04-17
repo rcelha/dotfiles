@@ -25,3 +25,6 @@ which fnm > /dev/null 2>&1 && {
 which just > /dev/null 2>&1 && {
     eval "$(just --completions bash)"
 }
+
+# autoload -U +X bashcompinit && bashcompinit
+# complete -o nospace -C /opt/homebrew/bin/tk tk

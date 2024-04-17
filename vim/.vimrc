@@ -133,6 +133,7 @@ Plug 'tpope/vim-fugitive'  " Git commands
 Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
 Plug 'NoahTheDuke/vim-just' " https://github.com/casey/just
 Plug 'kshenoy/vim-signature'
+" Plug 'github/copilot.vim'
 
 " Colors
 Plug 'flazz/vim-colorschemes'

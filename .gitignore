@@ -8,4 +8,7 @@ general/.local/state
 general/.local/share
 general/.local/bin/
 general/.local/lib/
+general/.local/pipx/
 !general/.local/share/applications
+
+scripts/Brewfile.lock.json
