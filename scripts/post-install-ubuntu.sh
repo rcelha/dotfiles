@@ -7,7 +7,6 @@ set -euo pipefail
 sudo apt update
 sudo apt install -y --no-install-recommends curl
 
-
 # Brave
 sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg \
 	https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
@@ -19,22 +18,13 @@ echo "deb https://apt.enpass.io/ stable main" | sudo tee /etc/apt/sources.list.d
 wget -O - https://apt.enpass.io/keys/enpass-linux.key | sudo apt-key add -
 
 # Docker
-sudo install -m 0755 -d /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-sudo chmod a+r /etc/apt/keyrings/docker.gpg
-echo \
-  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 
-# Intel base kit
-# download the key to system keyring
-curl https://apt.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB \
-  | gpg --dearmor | sudo tee /usr/share/keyrings/oneapi-archive-keyring.gpg > /dev/null
-
-# add signed entry to apt sources and configure the APT client to use Intel repository:
-echo "deb [signed-by=/usr/share/keyrings/oneapi-archive-keyring.gpg] https://apt.repos.intel.com/oneapi all main" \
-  | sudo tee /etc/apt/sources.list.d/oneAPI.list
+# Syncthing
+sudo mkdir -p /etc/apt/keyrings
+sudo curl -L -o /etc/apt/keyrings/syncthing-archive-keyring.gpg https://syncthing.net/release-key.gpg
+echo "deb [signed-by=/etc/apt/keyrings/syncthing-archive-keyring.gpg] https://apt.syncthing.net/ syncthing stable" | sudo tee /etc/apt/sources.list.d/syncthing.list
 
 ./common-debian.sh
 ./common-linux.sh

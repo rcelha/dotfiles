@@ -2,7 +2,6 @@
 
 set -euo pipefail
 
-
 # General
 sudo apt-get update
 sudo apt-get install -y --no-install-recommends \
@@ -10,14 +9,7 @@ sudo apt-get install -y --no-install-recommends \
     build-essential \
     caffeine \
     cheese \
-    containerd.io \
-    ctop \
     curl \
-    curl \
-    docker-buildx-plugin \
-    docker-ce \
-    docker-ce-cli \
-    docker-compose-plugin \
     enpass \
     entr \
     fonts-firacode \
@@ -25,8 +17,6 @@ sudo apt-get install -y --no-install-recommends \
     gcc-multilib \
     git  \
     htop \
-    indicator-cpufreq \
-    intel-basekit \
     jq \
     keepassxc \
     kitty \
@@ -44,14 +34,12 @@ sudo apt-get install -y --no-install-recommends \
     make \
     myrepos \
     neovim \
-    numix-icon-theme \
-    numix-icon-theme-circle \
     silversearcher-ag \
     stow \
+    syncthing \
     tk-dev \
     tmux \
     vim \
-    vim-gtk \
     wget \
     xclip \
     xsel \

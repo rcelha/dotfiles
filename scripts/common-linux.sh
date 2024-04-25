@@ -6,10 +6,10 @@
 set -euo pipefail
 
 # change default shell
-sudo usermod -s $(which zsh) $USERNAME
+sudo usermod -s $(which zsh) $USER
 
 # groups
-sudo usermod -aG docker $USERNAME
+sudo usermod -aG docker $USER
 
 # oh my zsh
 if [ ! -d ~/.oh-my-zsh ]; then
