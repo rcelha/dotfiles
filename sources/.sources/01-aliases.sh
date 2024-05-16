@@ -10,10 +10,10 @@ alias l="ls -lh"
 alias ll="ls -lha"
 alias t="tree --gitignore"
 
-which nvim > /dev/null 2>&1 && {
-    alias vim=nvim
-    alias vi=nvim
-}
+# which nvim > /dev/null 2>&1 && {
+#     alias vim=nvim
+#     alias vi=nvim
+# }
 
 kitty-reload() {
     kill -SIGUSR1 $(pgrep -a kitty)
