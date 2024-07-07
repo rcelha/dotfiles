@@ -9,10 +9,9 @@
 	graphb = log --graph --decorate --oneline
 	graph = log --graph --decorate --oneline --all
 	changelog = log --pretty=format:'%C(yellow)%h%C(reset) %s %C(bold blue)%an%C(reset)%n%b' --abbrev-commit --date=relative
-	# git changelog master..
-	changedfiles = diff --name-status
-	# git changedfiles master...
-	branchdiff = diff master...
+	changed-files = diff --name-status
+	main-branch = symbolic-ref --short refs/remotes/origin/HEAD
+	branch-diff = !git diff $(git main-branch)...
 	tags = describe --abbrev=0 --tags
 
 [core]
