@@ -36,7 +36,7 @@ source "$HOME/.cargo/env"
 # Node dev tools
 cargo install fnm
 fnm install --lts
-fnm default lts/latest    
+fnm default lts/latest
 
 # Keeweb
 curl -o ~/.local/bin/keeweb.appimage -L https://github.com/keeweb/keeweb/releases/download/v1.18.7/KeeWeb-1.18.7.linux.AppImage
