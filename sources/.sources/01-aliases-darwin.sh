@@ -6,6 +6,7 @@ then
     alias stat=gstat
     alias jq=gojq
     alias ttime="/usr/bin/time -h"
+    alias upgrade-brew="brew update && brew upgrade"
 
     alert() {
         osascript -e 'display notification with title "'$1'"'
