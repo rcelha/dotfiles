@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+
+set -e
+
+# Test dependencies
+# TODO print missing command
+which gstat > /dev/null
+which expr > /dev/null
+which date > /dev/null
+
+TS_FOLDER="$HOME/.config/brew-upgrade/"
+TS_FILE="$TS_FOLDER/ts"
+# THRESHOLD_SECONDS=86400 # 60 * 60 * 24 -> 1 day
+THRESHOLD_SECONDS=60
+
+UPDATE=0
+
+mkdir -p $TS_FOLDER
+
+# If there is no TS file, this is the first time this is ran,
+# so it requires an update
+if [ ! -f "$TS_FILE" ]; then
+    UPDATE=1
+    touch "$TS_FILE"
+fi;
+
+
+now=$(date +%s)
+last_modified=$(gstat -c "%Y" "$TS_FILE")
+next_modified=`expr $last_modified + $THRESHOLD_SECONDS`
+
+if [ "$UPDATE" -eq "0" ] &&  [ "$next_modified" -lt "$now" ]; then
+    UPDATE=1
+fi;
+
+if [ "$UPDATE" -eq "0" ]; then
+    exit 0
+fi
+
+read -n 1 -p "Do you wish to update/upgrade brew (y/N)?" USER_UPDATE
+echo
+if [ "$USER_UPDATE" != "y" ]; then
+    echo Skipping brew update/upgrade
+    echo You can run it with the command "brew-upgrade"
+    exit 0
+fi
+
+touch "$TS_FILE"
+brew update
+brew upgrade
