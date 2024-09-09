@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
+brew "btop"
 brew "cmake"
 brew "colima"
 brew "coreutils"

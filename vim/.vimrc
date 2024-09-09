@@ -7,6 +7,8 @@ set t_Co=256
 syntax on
 " tab as space
 set expandtab
+set modeline
+set modelines=5
 
 " tab size "
 set backspace=2
