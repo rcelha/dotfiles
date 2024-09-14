@@ -5,7 +5,6 @@ sudo dnf -y install dnf-plugins-core
 sudo dnf install -y \
     curl \
     entr \
-    fzf \
     git  \
     git-delta \
     htop \
@@ -15,7 +14,6 @@ sudo dnf install -y \
     kitty \
     logiops \
     myrepos \
-    neovim \
     nodejs \
     stow \
     tealdeer \

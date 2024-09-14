@@ -21,7 +21,6 @@ sudo apt-get install -y --no-install-recommends \
     docker-compose-plugin \
     entr \
     fonts-firacode \
-    fzf \
     gcc-multilib \
     git  \
     htop \
@@ -41,7 +40,6 @@ sudo apt-get install -y --no-install-recommends \
     llvm \
     make \
     myrepos \
-    neovim \
     numix-icon-theme \
     numix-icon-theme-circle \
     silversearcher-ag \

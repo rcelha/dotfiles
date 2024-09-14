@@ -1,0 +1,22 @@
+#!/bin/sh
+
+set -exu
+
+which wget
+which curl
+which jq
+
+download_url=$(curl https://api.github.com/repos/junegunn/fzf/releases/latest | jq -r '.assets[] | select ( .content_type == "application/vnd.appimage") | .browser_download_url')
+download_url=$(curl https://api.github.com/repos/junegunn/fzf/releases/latest | jq -r '.assets[] | select ( .name|endswith("linux_amd64.tar.gz")) | .browser_download_url')
+filename=$(basename $download_url)
+
+cleanup() {
+    rm -f $filename
+    rm -f fzf
+}
+trap 'cleanup' EXIT
+
+cleanup
+wget $download_url
+tar -xvf $filename
+sudo install -b ./fzf /usr/bin

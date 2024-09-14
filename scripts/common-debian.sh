@@ -13,7 +13,6 @@ sudo apt-get install -y --no-install-recommends \
     enpass \
     entr \
     fonts-firacode \
-    fzf \
     gcc-multilib \
     git  \
     htop \
@@ -33,7 +32,6 @@ sudo apt-get install -y --no-install-recommends \
     llvm \
     make \
     myrepos \
-    neovim \
     silversearcher-ag \
     stow \
     syncthing \
