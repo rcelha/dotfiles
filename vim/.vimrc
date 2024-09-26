@@ -122,7 +122,7 @@ Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_root_markers = ["pyproject.toml", "Cargo.toml"]
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|venv)|node_modules|target|__pycache__|env$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|venv)|node_modules|target|__pycache__|env|dist$',
   \ 'file': '\v\.(exe|so|dll|pyc|class|png|jpg)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
@@ -154,6 +154,8 @@ endif
 
 " Tabby ML
 Plug 'TabbyML/tabby', {'rtp': 'clients/vim'}
+let g:tabby_keybinding_accept = '<Tab>'
+let g:tabby_keybinding_trigger_or_dismiss = '<C-\>'
 let g:tabby_server_url = 'http://127.0.0.1:8080'
 
 " COC

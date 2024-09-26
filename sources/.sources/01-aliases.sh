@@ -15,6 +15,8 @@ alias t="tree --gitignore"
 #     alias vi=nvim
 # }
 
-kitty-reload() {
+alias ifconfig::me="curl ifconfig.me/all.json | jq"
+
+kitty::reload() {
     kill -SIGUSR1 $(pgrep -a kitty)
 }
