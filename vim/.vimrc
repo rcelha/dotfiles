@@ -84,8 +84,8 @@ hi SpellBad cterm=undercurl ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 " Switching themes
 let g:cycle_colors=[]
 let g:cycle_colors_current_index=0
-call add(g:cycle_colors, ['dark', 'PaperColor', 'dark'])
-call add(g:cycle_colors, ['light', 'PaperColor', 'papercolor'])
+call add(g:cycle_colors, ['dark', 'PaperColor', 'dark', 'hi CocInlayHint ctermbg=0 ctermfg=244'])
+call add(g:cycle_colors, ['light', 'PaperColor', 'papercolor', 'hi CocInlayHint ctermbg=255 ctermfg=102'])
 
 function CycleThemeReset()
     execute 'set background=' . g:cycle_colors[g:cycle_colors_current_index][0]
@@ -93,6 +93,7 @@ function CycleThemeReset()
     if exists(':AirlineTheme')
         execute 'AirlineTheme ' . g:cycle_colors[g:cycle_colors_current_index][2]
     endif
+    execute '' . g:cycle_colors[g:cycle_colors_current_index][3]
 endfunction
 
 function CycleTheme()
@@ -140,6 +141,17 @@ Plug 'kshenoy/vim-signature'
 " Colors
 Plug 'flazz/vim-colorschemes'
 Plug 'NLKNguyen/papercolor-theme'
+
+let g:PaperColor_Theme_Options = {
+  \   'theme': {
+  \     'default.dark': {
+  \       'transparent_background': 1,
+  \       'override' : {
+  \       }
+  \     }
+  \   }
+  \ }
+
 Plug 'Rykka/riv.vim'  " RST plugin. Main use is for Python sphinx docstrings
 let g:riv_python_rst_hl=1
 let g:riv_highlight_code = 'python,rust,javascript,vim,sh'
@@ -163,12 +175,13 @@ let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-tsser
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " COC colors
 ""
+" function MyColorSetup() abort
 function MyColorSetup() abort
-    hi CocErrorSign  ctermfg=Red guifg=#ff0000
-    hi CocWarningSign  ctermfg=Brown guifg=#ff922b
-    hi CocInfoSign  ctermfg=Yellow guifg=#fab005
-    hi CocHintSign  ctermfg=Blue guifg=#15aabf
-    hi CocUnderline  cterm=underline gui=underline
+    " hi CocErrorSign  ctermfg=Red guifg=#ff0000
+    " hi CocWarningSign  ctermfg=Brown guifg=#ff922b
+    " hi CocInfoSign  ctermfg=Yellow guifg=#fab005
+    " hi CocHintSign  ctermfg=Blue guifg=#15aabf
+    " hi CocUnderline  cterm=underline gui=underline
 endfunction
 
 " Format selection
@@ -204,7 +217,8 @@ call plug#end()
 let g:airline#extensions#tabline#enabled = 1
 
 " Set theme with cycletheme
-autocmd User AirlineAfterInit
-            \ call CycleThemeReset() |
-            \ call MyColorSetup()
+" autocmd User AirlineAfterInit
+autocmd User AirlineToggledOn
+    \ call CycleThemeReset() |
+    \ call MyColorSetup()
 autocmd ColorScheme * call MyColorSetup()

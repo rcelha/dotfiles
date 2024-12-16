@@ -1,4 +1,7 @@
 {
+  "inlayHint.enable": true,
+  "inlayHint.enableParameter": true,
+  "inlayHint.position": "eol",
   "python.venvFolders": [".venv", "envs", ".pyenv", ".direnv"],
   "python.formatting.provider": "black",
   "languageserver": {
