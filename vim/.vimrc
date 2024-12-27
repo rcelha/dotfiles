@@ -84,8 +84,14 @@ hi SpellBad cterm=undercurl ctermfg=009 ctermbg=011 guifg=#ff0000 guibg=#ffff00
 " Switching themes
 let g:cycle_colors=[]
 let g:cycle_colors_current_index=0
-call add(g:cycle_colors, ['dark', 'PaperColor', 'dark', 'hi CocInlayHint ctermbg=0 ctermfg=244'])
-call add(g:cycle_colors, ['light', 'PaperColor', 'papercolor', 'hi CocInlayHint ctermbg=255 ctermfg=102'])
+
+" Theme #0
+call add(g:cycle_colors, ['dark', 'PaperColor', 'dark'])
+call add(g:cycle_colors[0], 'hi CocInlayHint ctermbg=0 ctermfg=244 cterm=italic')
+
+" Theme #1
+call add(g:cycle_colors, ['light', 'PaperColor', 'papercolor'])
+call add(g:cycle_colors[1], 'hi CocInlayHint ctermbg=255 ctermfg=102 cterm=italic')
 
 function CycleThemeReset()
     execute 'set background=' . g:cycle_colors[g:cycle_colors_current_index][0]
@@ -123,7 +129,7 @@ Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_root_markers = ["pyproject.toml", "Cargo.toml"]
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|venv)|node_modules|target|__pycache__|env|dist$',
+  \ 'dir':  '\v[\/]\.(git|hg|svn|venv)|node_modules|target|__pycache__|env|dist|vendor$',
   \ 'file': '\v\.(exe|so|dll|pyc|class|png|jpg)$',
   \ 'link': 'some_bad_symbolic_links',
   \ }
