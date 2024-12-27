@@ -1,42 +1,131 @@
+tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/services"
+tap "kubecolor/tap"
+tap "lizardbyte/homebrew"
+tap "schniz/tap"
+tap "tabbyml/tabby"
+# Automatic configure script builder
+brew "autoconf"
+# Tool for generating GNU Standards-compliant Makefiles
+brew "automake"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Cross-platform make
 brew "cmake"
+# Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
+# GNU File, Shell, and Text utilities
 brew "coreutils"
+# Command-line tool for getting & setting the default browser
+brew "defaultbrowser"
+# Pack, ship and run any application as a lightweight container
 brew "docker"
+# Docker CLI plugin for extended build capabilities with BuildKit
+brew "docker-buildx"
+# Isolated development environments using Docker
 brew "docker-compose"
+# Run arbitrary commands when files change
 brew "entr"
+# Fast and simple Node.js version manager
 brew "fnm"
+# Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU compiler collection
+brew "gcc"
+# Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# Git extension for versioning large files
 brew "git-lfs"
+# Command-line option parsing utility
 brew "gnu-getopt"
+# GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
+# Pure Go implementation of jq
 brew "gojq"
+# Kubernetes package manager
+brew "helm"
+# Improved top (interactive process viewer)
 brew "htop"
+# Handy way to save and run project-specific commands
 brew "just"
+# C library SSHv1/SSHv2 client and server protocols
+brew "libssh"
+# Next-gen compiler infrastructure
 brew "llvm", link: true
+# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-brew "poetry"
-brew "pyenv"
+# Development kit for the Java programming language
+brew "openjdk"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Code-search similar to ack
 brew "the_silver_searcher"
+# Terminal multiplexer
 brew "tmux"
+# Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Vi 'workalike' with many additional features
+brew "vim"
+# Executes a program periodically, showing output fullscreen
 brew "watch"
+# Internet file retriever
 brew "wget"
+# UNIX shell (command interpreter)
 brew "zsh"
+# Automatic tiling window manager similar to xmonad
+cask "amethyst"
+# Web browser focusing on privacy
 cask "brave-browser"
+# Opensource IDE for exploring and testing api's
+cask "bruno"
+# Password and credentials manager
+cask "enpass"
+# Web browser
 cask "firefox@developer-edition"
 cask "font-fira-code"
 cask "font-jetbrains-mono"
+# Fork of Telegram Desktop
+cask "forkgram-telegram"
+# Password manager app
 cask "keepassxc"
+# GPU-based terminal emulator
 cask "kitty"
+# Free cross-platform office suite, fresh version
 cask "libreoffice"
+# Mouse utility to add gesture functions and smooth scrolling to 3rd party mice
+cask "mac-mouse-fix"
+# Clipboard manager
+cask "maccy"
+# Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
-cask "sensiblesidebuttons"
+# Digital audio production application
+cask "reaper"
+# Team communication and collaboration software
+cask "slack"
+# Music streaming service
+cask "spotify"
+# Open-source media center
+cask "stremio"
+# Real time file synchronisation software
+cask "syncthing"
+# Unpacks archive files
 cask "the-unarchiver"
+# Virtual machines UI using QEMU
+cask "utm"
+# Multimedia player
+cask "vlc"
+# Native desktop client for WhatsApp
 cask "whatsapp"
-cask "zoom"
-cask "enpass"
+# Wine wrapper built with SwiftUI
+cask "whisky"

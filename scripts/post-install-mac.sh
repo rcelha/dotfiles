@@ -2,7 +2,7 @@
 
 set -ex
 
-export PATH=$PATH:/opt/homebrew/bin/
+export PATH=/opt/homebrew/bin/:$PATH
 
 # homebrew
 if [ ! `which brew` ]; then
@@ -17,3 +17,5 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 git-lfs install
 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | bash -s -- -y --no-modify-path
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
