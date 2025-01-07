@@ -95,6 +95,8 @@ cask "font-fira-code"
 cask "font-jetbrains-mono"
 # Fork of Telegram Desktop
 cask "forkgram-telegram"
+# Game development engine
+cask "godot"
 # Password manager app
 cask "keepassxc"
 # GPU-based terminal emulator
