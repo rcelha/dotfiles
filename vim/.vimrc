@@ -127,7 +127,7 @@ let g:goyo_width = 120
 " Utils plugins
 Plug 'rking/ag.vim'
 Plug 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_root_markers = ["pyproject.toml", "Cargo.toml"]
+let g:ctrlp_root_markers = ["pyproject.toml", "Cargo.toml", "project.godot"]
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn|venv)|node_modules|target|__pycache__|env|dist|vendor$',
   \ 'file': '\v\.(exe|so|dll|pyc|class|png|jpg)$',

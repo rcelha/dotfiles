@@ -4,6 +4,14 @@
   "inlayHint.position": "eol",
   "python.venvFolders": [".venv", "envs", ".pyenv", ".direnv"],
   "python.formatting.provider": "black",
+  "workspace.rootPatterns": [
+    ".git",
+    ".hg",
+    ".projections.json",
+    "pyproject.toml",
+    "Cargo.toml",
+    "project.godot"
+  ],
   "languageserver": {
     "terraform": {
       "command": "terraform-ls",
@@ -11,6 +19,11 @@
       "filetypes": ["terraform", "tf"],
       "initializationOptions": {},
       "settings": {}
+    },
+    "gdscript": {
+      "host": "127.0.0.1",
+      "filetypes": ["gd", "gdscript", "gdscript3"],
+      "port": 6005
     }
   }
 }
