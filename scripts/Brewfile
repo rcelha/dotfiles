@@ -84,16 +84,18 @@ brew "wget"
 brew "zsh"
 # Self-hosted game stream host for Moonlight
 brew "lizardbyte/homebrew/sunshine"
-# BetterDisplay CLI proxy
-brew "waydabber/betterdisplay/betterdisplaycli"
 # Automatic tiling window manager similar to xmonad
 cask "amethyst"
 # Display management tool
 cask "betterdisplay"
 # Web browser focusing on privacy
 cask "brave-browser"
+# Web browser focusing on privacy
+cask "brave-browser@beta"
 # Opensource IDE for exploring and testing api's
 cask "bruno"
+# Desktop app for GPT-4 / GPT-3.5 (OpenAI API)
+cask "chatbox"
 # Password and credentials manager
 cask "enpass"
 # Web browser
@@ -104,6 +106,8 @@ cask "font-jetbrains-mono"
 cask "forkgram-telegram"
 # Game development engine
 cask "godot"
+# HTTP and GraphQL Client
+cask "insomnium"
 # Password manager app
 cask "keepassxc"
 # GPU-based terminal emulator
@@ -140,3 +144,5 @@ cask "vscodium"
 cask "whatsapp"
 # Wine wrapper built with SwiftUI
 cask "whisky"
+vscode "geequlim.godot-tools"
+vscode "vscodevim.vim"
