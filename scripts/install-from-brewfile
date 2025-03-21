@@ -1,0 +1,6 @@
+#!/bin/sh
+
+set -ex
+
+export HOMEBREW_CASK_OPTS="--appdir=~/Applications"
+brew bundle
