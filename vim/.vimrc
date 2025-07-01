@@ -35,7 +35,9 @@ set showmatch "show {} and [] open/close tags
 " set textwidth=79 "break on 79o caracter
 
 " Copy and Paste from transfer area
-set pastetoggle=<F2> "copy mode
+if !has('nvim')
+    set pastetoggle=<F2> "copy mode
+endif
 set clipboard^=unnamed,unnamedplus
 
 " multitab
