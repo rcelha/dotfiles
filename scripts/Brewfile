@@ -94,8 +94,6 @@ cask "brave-browser"
 cask "brave-browser@beta"
 # Opensource IDE for exploring and testing api's
 cask "bruno"
-# Desktop app for GPT-4 / GPT-3.5 (OpenAI API)
-cask "chatbox"
 # Password and credentials manager
 cask "enpass"
 # Web browser
@@ -128,8 +126,6 @@ cask "slack"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
-# Open-source media center
-cask "stremio"
 # Real time file synchronisation software
 cask "syncthing"
 # Unpacks archive files
