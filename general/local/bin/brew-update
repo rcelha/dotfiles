@@ -10,7 +10,7 @@ which date > /dev/null
 
 TS_FOLDER="$HOME/.config/brew-upgrade/"
 TS_FILE="$TS_FOLDER/ts"
-THRESHOLD_DAYS=3
+THRESHOLD_DAYS=7
 THRESHOLD_SECONDS=`expr 60 \* 60 \* 24 \* ${THRESHOLD_DAYS}`
 
 UPDATE=0
