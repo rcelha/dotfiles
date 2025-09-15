@@ -150,8 +150,6 @@ cask "reaper"
 cask "slack"
 # Music streaming service
 cask "spotify"
-# Open-source media center
-cask "stremio"
 # Real time file synchronisation software
 cask "syncthing-app"
 # Unpacks archive files
