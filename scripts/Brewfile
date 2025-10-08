@@ -17,6 +17,10 @@ brew "awscli"
 brew "black"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# TIFF library and utilities
+brew "libtiff"
+# Audio plugin host supporting LADSPA, LV2, VST2/3, SF2 and more
+brew "carla"
 # Cross-platform make
 brew "cmake"
 # Linux virtual machines
@@ -71,8 +75,6 @@ brew "just"
 brew "lazydocker"
 # C library SSHv1/SSHv2 client and server protocols
 brew "libssh"
-# TIFF library and utilities
-brew "libtiff"
 # Color management engine supporting ICC profiles
 brew "little-cms2"
 # Next-gen compiler infrastructure
@@ -105,8 +107,6 @@ brew "watch"
 brew "wget"
 # UNIX shell (command interpreter)
 brew "zsh"
-# Automatic tiling window manager similar to xmonad
-cask "amethyst"
 # Display management tool
 cask "betterdisplay"
 # Web browser focusing on privacy
