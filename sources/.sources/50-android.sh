@@ -5,8 +5,9 @@ else
     export ANDROID_HOME=$HOME/Android/Sdk
 fi
 
-export NDK_HOME="$ANDROID_HOME/ndk/29.0.14206865"
+export NDK_HOME="$ANDROID_HOME/ndk/27.3.13750724"
 export ANDROID_NDK=$NDK_HOME
+export ANDROID_NDK_HOME=$NDK_HOME
 
 export FLUTTER_HOME=$HOME/local/flutter
 export CHROME_EXECUTABLE=/opt/brave.com/brave/brave-browser
