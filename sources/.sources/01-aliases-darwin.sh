@@ -1,8 +1,9 @@
 if [ $(uname -s) = "Darwin" ]
 then
     alias ls="gls --color=auto"
-    alias brave="open -a Brave\ Browser"
-    alias chrome="open -a Google\ Chrome"
+    alias brave="open -a 'Brave Browser'"
+    alias brave-beta="open -a 'Brave Browser Beta'"
+    alias chrome="open -a 'Google Chrome'"
     alias stat=gstat
     alias jq=gojq
     alias ttime="/usr/bin/time -h"
