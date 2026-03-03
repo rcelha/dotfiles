@@ -43,8 +43,8 @@
 	diffFilter = delta --color-only
 
 [delta]
-	; features = side-by-side line-numbers decorations
-	features = line-numbers decorations
+	features = side-by-side line-numbers decorations
+	; features = line-numbers decorations
 	navigate = true
 	whitespace-error-style = 22 reverse
 
