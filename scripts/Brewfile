@@ -6,7 +6,7 @@ tap "homebrew/services"
 tap "kubecolor/tap"
 tap "lizardbyte/homebrew"
 tap "schniz/tap"
-tap "tabbyml/tabby"
+
 # Automatic configure script builder
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -113,8 +113,6 @@ brew "watch"
 brew "wget"
 # UNIX shell (command interpreter)
 brew "zsh"
-# Display management tool
-cask "betterdisplay"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Web browser focusing on privacy
@@ -123,8 +121,6 @@ cask "brave-browser@beta"
 cask "bruno"
 # C and C++ IDE
 cask "clion"
-# Mouse and keyboard sharing utility
-cask "deskflow"
 # Password and credentials manager
 cask "enpass"
 # Web browser
@@ -138,8 +134,6 @@ cask "font-zed-sans"
 cask "gimp"
 # HTTP and GraphQL Client
 cask "insomnium"
-# Menu bar manager
-cask "jordanbaird-ice"
 # Password manager app
 cask "keepassxc"
 # GPU-based terminal emulator
