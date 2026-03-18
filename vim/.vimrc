@@ -144,7 +144,6 @@ Plug 'tpope/vim-fugitive'  " Git commands
 Plug 'airblade/vim-gitgutter'  " Git diff in the gutter
 Plug 'NoahTheDuke/vim-just' " https://github.com/casey/just
 Plug 'kshenoy/vim-signature'
-" Plug 'github/copilot.vim'
 
 " Colors
 Plug 'flazz/vim-colorschemes'
@@ -171,12 +170,6 @@ if !exists('##TextYankPost')
   xmap y <Plug>(highlightedyank)
   omap y <Plug>(highlightedyank)
 endif
-
-" Tabby ML
-Plug 'TabbyML/tabby', {'rtp': 'clients/vim'}
-let g:tabby_keybinding_accept = '<Tab>'
-let g:tabby_keybinding_trigger_or_dismiss = '<C-\>'
-let g:tabby_server_url = 'http://127.0.0.1:8080'
 
 " COC
 let g:coc_global_extensions = ['coc-pyright', 'coc-yaml', 'coc-json', 'coc-tsserver', 'coc-prettier', 'coc-lists', 'coc-rust-analyzer', 'coc-toml', 'coc-flutter', 'coc-pairs', 'coc-clangd', 'coc-cmake' ]
