@@ -41,7 +41,7 @@ read -n 1 -p "Do you wish to update/upgrade brew (y/N)?" USER_UPDATE
 echo
 if [ "$USER_UPDATE" != "y" ]; then
     echo Skipping brew update/upgrade
-    echo You can run it with the command "brew-upgrade"
+    echo You can run it with the command "brew-update"
     exit 0
 fi
 
