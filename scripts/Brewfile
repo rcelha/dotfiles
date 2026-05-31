@@ -113,8 +113,6 @@ cask "font-zed-sans"
 cask "gimp"
 # 2D and 3D game engine
 cask "godot"
-# HTTP and GraphQL Client
-cask "insomnium"
 # Password manager app
 cask "keepassxc"
 # GPU-based terminal emulator
@@ -165,3 +163,4 @@ cargo "mergiraf"
 cargo "samply"
 cargo "simple-http-server"
 cargo "tealdeer"
+npm "corepack"
