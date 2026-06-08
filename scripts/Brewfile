@@ -12,14 +12,20 @@ brew "autoconf"
 brew "automake"
 # Official Amazon AWS command-line interface
 brew "awscli"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
 # Python code formatter
 brew "black"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# TIFF library and utilities
+brew "libtiff"
 # Audio plugin host supporting LADSPA, LV2, VST2/3, SF2 and more
 brew "carla"
 # Cross-platform make
 brew "cmake"
+# Linux virtual machines
+brew "lima"
 # Container runtimes on MacOS (and Linux) with minimal setup
 brew "colima"
 # GNU File, Shell, and Text utilities
@@ -44,12 +50,20 @@ brew "gcc"
 brew "git-delta"
 # Git extension for versioning large files
 brew "git-lfs"
+# Open-source GitLab command-line tool
+brew "glab"
 # Command-line option parsing utility
 brew "gnu-getopt"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
+# Library to load and enumerate PKCS#11 modules
+brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
+# Asynchronous event library
+brew "libevent"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Pure Go implementation of jq
@@ -64,14 +78,24 @@ brew "just"
 brew "lazydocker"
 # C library SSHv1/SSHv2 client and server protocols
 brew "libssh"
+# Additional guest agents for Lima
+brew "lima-additional-guestagents"
+# Color management engine supporting ICC profiles
+brew "little-cms2"
 # Next-gen compiler infrastructure
 brew "llvm"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Utility for managing network connections
+brew "netcat"
 # Development kit for the Java programming language
 brew "openjdk"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@1.1"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
 # Python version management
 brew "pyenv"
 # Persistent key-value database, with built-in net interface
@@ -125,6 +149,8 @@ cask "mac-mouse-fix"
 cask "maccy"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
+# Plugin for AWS CLI to start and end sessions that connect to managed instances
+cask "session-manager-plugin"
 # Team communication and collaboration software
 cask "slack"
 # Music streaming service
@@ -149,12 +175,9 @@ cask "whatsapp"
 cask "whisky"
 # Multiplayer code editor
 cask "zed"
-vscode "geequlim.godot-tools"
-vscode "ms-python.debugpy"
-vscode "ms-python.python"
-vscode "vscodevim.vim"
 cargo "bacon"
 cargo "cargo-binstall"
+cargo "cargo-llvm-cov"
 cargo "cargo-nextest"
 cargo "cargo-readme"
 cargo "cargo-watch"
@@ -162,5 +185,7 @@ cargo "flamegraph"
 cargo "mergiraf"
 cargo "samply"
 cargo "simple-http-server"
+cargo "sqlx-cli"
 cargo "tealdeer"
+uv "keyring"
 npm "corepack"
