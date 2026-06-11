@@ -6,3 +6,5 @@
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+[ -d ~/.vite-plus ] && source "$HOME/.vite-plus/env"
