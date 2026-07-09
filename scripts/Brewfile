@@ -46,6 +46,8 @@ brew "fnm"
 brew "fzf"
 # GNU compiler collection
 brew "gcc"
+# GitHub command-line tool
+brew "gh"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
 # Git extension for versioning large files
@@ -60,10 +62,6 @@ brew "gnu-sed"
 brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# Asynchronous event library
-brew "libevent"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Pure Go implementation of jq
@@ -76,6 +74,8 @@ brew "htop"
 brew "just"
 # Lazier way to manage everything docker
 brew "lazydocker"
+# Asynchronous event library
+brew "libevent"
 # C library SSHv1/SSHv2 client and server protocols
 brew "libssh"
 # Additional guest agents for Lima
@@ -102,12 +102,16 @@ brew "pyenv"
 brew "redis"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Terraform version manager inspired by rbenv
+brew "tfenv"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
 # Vi 'workalike' with many additional features
 brew "vim"
 # Executes a program periodically, showing output fullscreen
@@ -116,6 +120,8 @@ brew "watch"
 brew "wget"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Terraform Language Server
+brew "hashicorp/tap/terraform-ls", trusted: true
 # Tools for building Android applications
 cask "android-studio"
 # Web browser focusing on privacy
@@ -189,3 +195,4 @@ cargo "sqlx-cli"
 cargo "tealdeer"
 uv "keyring"
 npm "corepack"
+npm "release-please"
