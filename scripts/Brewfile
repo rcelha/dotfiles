@@ -1,4 +1,3 @@
-tap "chase/tap"
 tap "deskflow/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
@@ -91,7 +90,7 @@ brew "netcat"
 # Development kit for the Java programming language
 brew "openjdk"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
+brew "openssl@3.5", link: true
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Protocol buffers (Google's data interchange format)
@@ -193,6 +192,5 @@ cargo "samply"
 cargo "simple-http-server"
 cargo "sqlx-cli"
 cargo "tealdeer"
-uv "keyring"
 npm "corepack"
 npm "release-please"
