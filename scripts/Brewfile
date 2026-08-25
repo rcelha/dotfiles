@@ -83,6 +83,8 @@ brew "lima-additional-guestagents"
 brew "little-cms2"
 # Next-gen compiler infrastructure
 brew "llvm"
+# Deep clean and optimize your Mac
+brew "mole"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Utility for managing network connections
@@ -90,7 +92,7 @@ brew "netcat"
 # Development kit for the Java programming language
 brew "openjdk"
 # Cryptography and SSL/TLS Toolkit
-brew "openssl@3.5", link: true
+brew "openssl@1.1"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Protocol buffers (Google's data interchange format)
@@ -152,6 +154,8 @@ cask "libreoffice"
 cask "mac-mouse-fix"
 # Clipboard manager
 cask "maccy"
+# Online collaborative whiteboard platform
+cask "miro"
 # Knowledge base that works on top of a local folder of plain text Markdown files
 cask "obsidian"
 # Plugin for AWS CLI to start and end sessions that connect to managed instances
@@ -192,5 +196,6 @@ cargo "samply"
 cargo "simple-http-server"
 cargo "sqlx-cli"
 cargo "tealdeer"
+uv "keyring"
 npm "corepack"
 npm "release-please"
