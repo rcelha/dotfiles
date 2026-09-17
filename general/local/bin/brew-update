@@ -47,4 +47,4 @@ fi
 
 touch "$TS_FILE"
 brew update
-brew upgrade
+brew upgrade -y
