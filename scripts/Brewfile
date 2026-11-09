@@ -91,8 +91,6 @@ brew "neovim"
 brew "netcat"
 # Development kit for the Java programming language
 brew "openjdk"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
 # Package compiler and linker metadata toolkit
 brew "pkgconf"
 # Protocol buffers (Google's data interchange format)
@@ -125,6 +123,8 @@ brew "zsh"
 brew "hashicorp/tap/terraform-ls", trusted: true
 # Tools for building Android applications
 cask "android-studio"
+# 3D creation suite
+cask "blender@lts"
 # Web browser focusing on privacy
 cask "brave-browser"
 # Web browser focusing on privacy
@@ -196,6 +196,5 @@ cargo "samply"
 cargo "simple-http-server"
 cargo "sqlx-cli"
 cargo "tealdeer"
-uv "keyring"
 npm "corepack"
 npm "release-please"
