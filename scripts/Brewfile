@@ -26,7 +26,7 @@ brew "cmake"
 # Linux virtual machines
 brew "lima"
 # Container runtimes on MacOS (and Linux) with minimal setup
-brew "colima"
+brew "colima", restart_service: :changed
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Command-line tool for getting & setting the default browser
@@ -63,6 +63,8 @@ brew "p11-kit"
 brew "gnutls"
 # GNU Privacy Guard (OpenPGP)
 brew "gnupg"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
 # Pure Go implementation of jq
 brew "gojq"
 # Kubernetes package manager
@@ -135,6 +137,8 @@ cask "bruno"
 cask "enpass"
 # Web browser
 cask "firefox@developer-edition"
+# Offline voice-to-text dictation app with AI enhancement
+cask "fluidvoice"
 cask "font-fira-code"
 cask "font-jetbrains-mono"
 cask "font-zed-mono"
@@ -144,6 +148,8 @@ cask "font-zed-sans"
 cask "gimp"
 # 2D and 3D game engine
 cask "godot"
+# Menu bar manager
+cask "jordanbaird-ice"
 # Password manager app
 cask "keepassxc"
 # GPU-based terminal emulator
@@ -196,5 +202,7 @@ cargo "samply"
 cargo "simple-http-server"
 cargo "sqlx-cli"
 cargo "tealdeer"
+uv "keyring"
+uv "pybritive"
 npm "corepack"
 npm "release-please"
